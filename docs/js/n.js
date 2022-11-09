@@ -235,7 +235,7 @@ for (var i = 0; i < length; i++) {
 			// isStatic: true,
 			render: {
 				sprite: {
-					texture: "/img/" + microsoft[i]["img"],
+					texture: "img/" + microsoft[i]["img"],
 					// texture: "/img/freeconsultation.png",
 					xScale: 1 * delta,
 					yScale: 1 * delta,
@@ -309,7 +309,7 @@ document.querySelector(".phisicbox").addEventListener("click", function () {
 					// isStatic: true,
 					render: {
 						sprite: {
-							texture: "/img/" + solution[i]["img"],
+							texture: "img/" + solution[i]["img"],
 							// texture: "/img/freeconsultation.png",
 							xScale: 1 * delta,
 							yScale: 1 * delta,
