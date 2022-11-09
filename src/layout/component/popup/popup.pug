@@ -1,0 +1,90 @@
+#solution-popup.solution-popup.popup
+	.popup__overlay
+	.popup__wrap
+		.popup__close
+		.popup__content
+			ul.solution-popup__bc 
+				li Решение MS
+				li  Microsoft MFA
+			.solution-popup.h2 Замена
+			.solution-popup__subtitle 
+				p 
+					color  Мультифактор, Компания Актив (Актив Рутокен), Алладин, Компания Индид (Indeed AM)
+			.solution-popup-it
+				.solution-popup-it__solution 
+					span
+						color Мультифактор
+				.solution-popup-it__desc 
+					p Multifactor — система многофакторной аутентификации для сайтов, Linux серверов, Windows серверов, систем виртуализации и облаков, Exchange, VPN, VDI и множества корпоративных приложений. Легко встраивается в любой процесс и проверяет подлинность ваших пользователей, используя наиболее современные и безопасные способы аутентификации.
+				a.btn-arrow(href="#")
+						span Запросить консультацию
+						.btn-arrow__circle
+							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+							</svg>
+			.solution-popup-it
+				.solution-popup-it__solution
+					span
+						color Компания Актив (Актив Рутокен)
+				.solution-popup-it__desc 
+					p Компания «Актив» — российский разработчик средств информационной безопасности, крупнейший в России производитель электронных идентификаторов, электронных ключей и решений для защиты программного обеспечения. Компания была основана в 1994 году и сегодня объединяет бренды Рутокен и Guardant.
+				a.btn-arrow(href="#")
+						span Запросить консультацию
+						.btn-arrow__circle
+							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+							</svg>
+			.solution-popup-it
+				.solution-popup-it__solution
+					span
+						color  Компания Индид (Indeed AM)
+				.solution-popup-it__desc 
+					p Платформа Indeed AM позволяет построить систему централизованного управления доступом пользователей к информационным ресурсам компании. Поддерживаются различные технологии усиленной и многофакторной аутентификации. С помощью механизмов интеграции можно подключать разнообразные целевые приложения. Indeed AM помогает сократить расходы на сопровождение инфраструктуры и сделать работу пользователей более эффективной.
+				a.btn-arrow(href="#")
+						span Запросить консультацию
+						.btn-arrow__circle
+							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+							</svg>
+#feedback.feedback-popup.popup
+	.popup__overlay
+	.popup__wrap
+		.popup__close
+		.popup__content._success
+			.small-title Свяжитесь с нами
+			.feedback-popup__desc
+				p Спасибо! Совсем скоро мы свяжемся с Вами!
+		.popup__content._error
+			.small-title Свяжитесь с нами
+			.feedback-popup__desc
+				p Упс. Что-то пошло не так, пожалуйста перезагрузите страницу или попробуйте позднее.
+		.popup__content._form
+			.small-title Свяжитесь с нами
+			.feedback-popup__desc
+					p Если вы хотите записаться на консультацию, оставьте свои данные и наши специалисты свяжутся с вами в ближайшее время.
+			form#popup-feedback-form.feedback-popup__form(action="/",method="POST")
+				
+				.feedback-popup__row
+					.form-item 
+						input(data-rule-required, type="text",name="name",placeholder="Имя Фамилия")
+					.form-item 
+						input._mask-phone(data-rule-required, type="text",name="phone",placeholder="Телефон")
+					.form-item 
+						input(data-rule-required,data-rule-email, type="text",name="mail",placeholder="Email")
+					.form-item 
+						input(data-rule-required, type="text",name="company",placeholder="Компания")
+					.form-item 
+						input(data-rule-required, type="text",name="positiobn",placeholder="Должность")
+					.form-item 
+						input(data-rule-required, type="text",name="peoples",placeholder="Кол-во сотрудников")
+				.feedback-popup__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных
+				button.feedback-popup__sbmt.btn-arrow(type="submit") 
+					span Отправить заявку
+					.btn-arrow__circle
+						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+						</svg>
+
+
+
+

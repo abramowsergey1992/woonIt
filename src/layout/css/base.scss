@@ -1,0 +1,85 @@
+body {
+	font-family: "Manrope";
+	font-style: normal;
+	font-weight: 100;
+	font-size: 20px;
+	@include lh(20, 27);
+	color: #fff;
+	letter-spacing: -0.03em;
+	background: #070B13;
+
+	&._no-scroll {
+		overflow: hidden;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+* {
+	-webkit-box-decoration-break: clone;
+	isolation: isolate;
+}
+
+@media (min-width: 992px) {
+	._v-mob {
+		display: none;
+	}
+}
+
+@media (max-width: 992px) {
+	._v-desc {
+		display: none;
+	}
+}
+
+
+._hidden {
+	display: none !important;
+}
+
+.block {
+	margin-bottom: 130px;
+
+	@media (max-width: 992px) {
+		margin-bottom: 80px;
+	}
+}
+
+.center {
+	text-align: center;
+}
+
+.inner {
+	padding-left: 48px;
+	padding-right: 48px;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1440px;
+
+	@media(max-width:1200px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media(max-width:768px) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.inner {
+		width: 885px;
+		max-width: calc(100% - 440px);
+		margin-left: 0;
+		padding: 0;
+
+		@media(max-width:$NotCircle) {
+			width: 100%;
+			max-width: calc(100%);
+		}
+	}
+
+}
+
+.page {}

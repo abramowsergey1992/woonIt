@@ -1,0 +1,859 @@
+extends ../../layout/layout
+block title
+	title W-ONE IT 
+block content
+		#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
+			.fix-circle-1.fix-circle-step
+				p
+					color Полный цикл проекта 
+					br
+					| по замене: от консультации до внедрения и поддержки
+			.fix-circle-2.fix-circle-step
+				p
+					color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
+						br
+						| еще нужно «подружить» новое решение с остальными
+			.fix-circle-4.fix-circle-step
+				p
+					color Акция действует
+						br
+						| до 30 ноября 2022!
+				a.btn-arrow(href="#")
+					span Запросить консультацию
+					.btn-arrow__circle
+						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+						</svg>
+			.fix-circle-3.fix-circle-step
+				.fix-circle-3__bg
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+					img(src="img/circle-bg.svg", alt="")
+				p
+					color Выберите категорию
+					| - 
+					br
+					| мы подберем необходимое решение...
+				a.btn-arrow(href="#")
+					span Запросить консультацию
+					.btn-arrow__circle
+						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+						</svg>
+		#top.inner.top
+			h1 Замена решений
+				br
+				| Microsoft
+			.circle-mob 
+				color Полный цикл проекта 
+				br
+				| по замене: от консультации
+				br
+				| до внедрения и поддержки
+			
+			iframe(src="3d.html", frameborder="0").frame
+		#about
+			.about
+				.inner
+					img(src="img/bg.svg", alt="").about__bg
+					.inner
+						.about__title.small-title О компании
+						.h2.about__text Уход таких гигантов, как Microsoft, 
+								color решения которого покрывали практически весь спектр ИТ-задач, 
+								| заметно отображается  на&nbsp;работоспособности инфраструктуры и безопасности 
+								color многих 
+								| компаний.
+						.circle-mob Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого еще нужно «подружить» новое решение с остальными 
+			.about-wh.inner
+				.inner
+					.about-wh__text
+						.about-wh__text-back
+							p Компания Wone IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.
+						
+						.about-wh__text-front 
+							<p>Компания W<color>one</color> IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.</p>
+
+					a(href="#").about-wh__link.btn-arrow 
+						span Запросить консультацию
+						.btn-arrow__circle
+							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+							</svg>
+
+		#solutions.solutions.inner
+			.inner
+				.small-title Решения
+				h2 Матрица замещающих решений
+				.solutions__filter-row
+					.btn.solutions__category-btn Категории
+					input.solutions__search(type="text",placeholder="Введите название категории или решения")
+				.solutions__categories(style="display:none;")
+					.solutions__category(data-filter="Операционные системы") 
+						span Операционные системы
+					.solutions__category(data-filter="Офисные приложения") 
+						span Офисные приложения
+					.solutions__category(data-filter="Объединенные коммуникации") 
+						span Объединенные коммуникации
+					.solutions__category(data-filter="Почтовый клиент") 
+						span Почтовый клиент
+					.solutions__category(data-filter="Почтовый сервер") 
+						span Почтовый сервер
+					.solutions__category(data-filter="Информационная безопасность") 
+						span Информационная безопасность
+					.solutions__category(data-filter="Web-ориентированные приложения") 
+						span Web-ориентированные приложения
+					.solutions__category(data-filter="Средства разработки") 
+						span Средства разработки
+					.solutions__category(data-filter="Сервисные приложения") 
+						span Сервисные приложения
+					.solutions__category(data-filter="Прикладное ПО") 
+						span Прикладное ПО
+					.solutions__category(data-filter="Управление проектами") 
+						span Управление проектами
+					.solutions__category(data-filter="Служба каталогов") 
+						span Служба каталогов
+					.solutions__category(data-filter="Система управления бизнесом") 
+						span Система управления бизнесом
+					.solutions__category(data-filter="Виртуализация") 
+						span Виртуализация
+					.solutions__category(data-filter="Облако") 
+						span Облако
+					.solutions__category(data-filter="Data") 
+						span Data
+					.solutions__category(data-filter="BI") 
+						span BI
+				.solutions__catygory-view
+					.solutions__row
+						.solution._bg-gray._default-view(data-filter="Офисные приложения")
+							.solution__title 
+								span Офисные приложения
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark._default-view(data-filter="Объединённые коммуникации")
+							.solution__title 
+								span Объединённые коммуникации
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Операционные системы")
+							.solution__title 
+								span Операционные системы
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Почтовый клиент")
+							.solution__title 
+								span Почтовый клиент
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Почтовый сервер")
+							.solution__title 
+								span Почтовый сервер
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Информационная безопасность")
+							.solution__title 
+								span Информационная безопасность
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Web-ориентированные приложения")
+							.solution__title 
+								span Web-ориентированные приложения
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Средства разработки")
+							.solution__title 
+								span Средства разработки
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Сервисные приложения")
+							.solution__title 
+								span Сервисные приложения
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Прикладное ПО")
+							.solution__title 
+								span Прикладное ПО
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Управление проектами")
+							.solution__title 
+								span Управление проектами
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Служба каталогов")
+							.solution__title 
+								span Служба каталогов
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray(data-filter="Система управления бизнесом")
+							.solution__title 
+								span Система управления бизнесом
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+												span._arrow
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark(data-filter="Виртуализация")
+							.solution__title 
+								span Виртуализация
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+						.solution._bg-gray._full(data-filter="Облако")
+							.solution__title 
+								span Облако
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Windows Home Server
+										td
+											a(href="#") 
+												color AstraLinux ОС
+													br
+													| Роса Кобальт
+													br
+													| РедСофт
+													br
+													| BaseAlt (Альт)
+									tr
+										td  Microsoft Office
+										td
+											a(href="#") 
+												color р7 
+													br
+													| Мой офис
+													br
+													|  Я360	
+												span._arrow
+						.solution._bg-dark._full(data-filter="Data")
+							.solution__title 
+								span Data
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  MS Teams
+										td
+											a(href="#") 
+												color Communigate PRO express
+													br
+													| я360 IVA Connect
+												span._arrow
+						
+
+						.solution._bg-white._full._default-view(data-filter="BI")
+							.solution__title
+								span BI
+								i.solution__toggle
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Microsoft Defender AV
+										td
+											a(href="#") 
+												color Microsoft Defender AV
+												span._arrow
+									tr
+										td  Microsoft Endpoint Manager
+										td
+											a(href="#") 
+												color Safemobile
+													br
+													| Soti
+												span._arrow
+									tr
+										td Microsoft MFA
+										td
+											a(href="#") 
+												color Мультифактор, 
+													br
+													| Актив (Актив Рутокен), 
+													br
+													| Алладин, 
+													br
+													| Индид (Indeed AM)
+												span._arrow
+									tr
+										td Microsoft Defender for Endpoint
+										td
+											a(href="#") 
+												color PT XDR
+													br
+													| Kaspersky EDR
+												span._arrow
+									tr
+										td Azure WAF
+										td
+											a(href="#") 
+												color PTAF
+													br
+													| Usergate SUMMA
+													br
+													| Yandex
+												span._arrow
+									tr
+										td Azure DDoS Protection
+										td
+											a(href="#") 
+												color Yandex DDoS Protection
+													br
+													| PTAF Cloud DDoS Protection
+												span._arrow
+									tr
+										td Microsoft Sentine 
+										td
+											a(href="#") 
+												color PT SIEM
+													br
+													| Kaspersky KUMA
+													br
+													| RuSIEM
+												span._arrow
+					.solutions__more 
+						.solutions__more-wrap
+							span.solutions__more-open-text Показать все 
+							span.solutions__more-hide-text Скрыть 
+							span._plus + 
+							span._minus -
+				.solutions__search-view(style="display:none")
+					.solution._bg-white._full._default-view
+						.solution-block
+							.solution__title
+								span BI
+							table
+								thead
+									tr
+										th Решение Microsoft
+										th Замена
+								tbody
+									tr
+										td  Microsoft Defender AV
+										td
+											a(href="#") 
+												color Microsoft Defender AV
+												span._arrow
+									tr
+										td  Microsoft Endpoint Manager
+										td
+											a(href="#") 
+												color Safemobile
+													br
+													| Soti
+												span._arrow
+									tr
+										td Microsoft MFA
+										td
+											a(href="#") 
+												color Мультифактор, 
+													br
+													| Актив (Актив Рутокен), 
+													br
+													| Алладин, 
+													br
+													| Индид (Indeed AM)
+												span._arrow
+									tr
+										td Microsoft Defender for Endpoint
+										td
+											a(href="#") 
+												color PT XDR
+													br
+													| Kaspersky EDR
+												span._arrow
+									tr
+										td Azure WAF
+										td
+											a(href="#") 
+												color PTAF
+													br
+													| Usergate SUMMA
+													br
+													| Yandex
+												span._arrow
+									tr
+										td Azure DDoS Protection
+										td
+											a(href="#") 
+												color Yandex DDoS Protection
+													br
+													| PTAF Cloud DDoS Protection
+												span._arrow
+									tr
+										td Microsoft Sentine 
+										td
+											a(href="#") 
+												color PT SIEM
+													br
+													| Kaspersky KUMA
+													br
+													| RuSIEM
+												span._arrow
+					
+		#free-consultation.free-consultation
+			.free-consultation__bg-wrap 
+				.free-consultation__bg
+				+picture('freeconsultation','png').free-consultation__img
+			.inner
+				.inner
+					.free-consultation__content
+						.small-title Нужна помощь с выбором или внедрением?
+						h2 Успевайте записаться на бесплатную консультацию!
+						p Со специалистами Wone IT, где в формате живого общения вы разберёте ситуацию внутри компании, выявите подходящие для вас решения, пройдёте демонстрацию или загрузите пилот.
+
+		#why.why.inner
+			.why__head
+				.small-title Почему Wone IT
+				.why__nav
+					.why__nav-prev
+						<svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M6.34654 12.4535L6.7001 12.807L7.4072 12.0999L7.05365 11.7463L6.34654 12.4535ZM1.1001 6.4999L0.746544 6.14635L0.392991 6.4999L0.746544 6.85346L1.1001 6.4999ZM7.05365 1.25346L7.4072 0.899902L6.7001 0.192796L6.34654 0.546349L7.05365 1.25346ZM7.05365 11.7463L1.45365 6.14635L0.746544 6.85346L6.34654 12.4535L7.05365 11.7463ZM1.45365 6.85346L7.05365 1.25346L6.34654 0.546349L0.746544 6.14635L1.45365 6.85346ZM1.1001 6.9999H19.3001V5.9999H1.1001V6.9999Z" fill="white"/>
+						</svg>
+
+					.why__nav-next
+						<svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M13.6535 12.4535L13.2999 12.807L12.5928 12.0999L12.9463 11.7463L13.6535 12.4535ZM18.8999 6.4999L19.2535 6.14635L19.607 6.4999L19.2535 6.85346L18.8999 6.4999ZM12.9463 1.25346L12.5928 0.899902L13.2999 0.192796L13.6535 0.546349L12.9463 1.25346ZM12.9463 11.7463L18.5463 6.14635L19.2535 6.85346L13.6535 12.4535L12.9463 11.7463ZM18.5463 6.85346L12.9463 1.25346L13.6535 0.546349L19.2535 6.14635L18.5463 6.85346ZM18.8999 6.9999H0.699902V5.9999H18.8999V6.9999Z" fill="white"/>
+						</svg>
+
+			.swiper.why-slider
+				.swiper-wrapper 
+					.swiper-slide.why-it
+						.why-it__wrap
+							h3  Мультивендоры
+							p Работая с большим количеством решений, мы способны подобрать инструмент  или гибрид конкретно для вашей задачи. 
+								br
+								| Вы  не будете платить за ненужный вам функционал
+	
+					.swiper-slide.why-it
+						.why-it__wrap
+							h3 Единая точка входа
+							p На пути к решению задачи мы будем являться для вас единым контактным лицом. С нами вы сможете решать любые вопросы на всем жизненном цикле проекта
+	
+					.swiper-slide.why-it._bg-grandient
+						.why-it__wrap
+							h3  Ориентация	
+								br
+								| на результат
+							p Мы понимаем, что основной задачей  для вас является развитие бизнеса,  а не внедрение какого-либо решения. Поэтому мы погружаемся в проект  как с технологической, так и с бизнес-стороны
+			.why-slider-back
+		#complex.complex.inner
+			h2 Комплексное решение технологических задач и бизнес-экспертиза
+			.complex__tree
+				.complex__row-1
+					.complex__it._it-1
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  01
+							p Глубокий аналитический анализ
+					.complex__it._it-3
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  03
+							p Презентации и&nbsp;IT-стратегии
+					.complex__it._it-5
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  05
+							p Проектная работа
+					.complex__it._it-7
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  07
+							p Сервисная поддержка
+				.complex__line
+				.complex__row-2
+					span._empty
+					.complex__it._it-2
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  02
+							p Демонстрация решений
+					.complex__it._it-4
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  04
+							p Подбор и закупка программных решений
+					.complex__it._it-6
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  06
+							p Техническая поддержка
+					.complex__it._it-8
+						.complex__it-wrapper
+							.complex__it-line
+							.complex__it-number  08
+							p Авторизованное обучение в&nbsp;Академии Wone IT
+				
+				.complex__tree-line
+		#awards.awards 
+			.inner 
+				h2  Награды и статусы
+				.awards__row
+					.award._a-1._white._span-1
+						.award__wrapper
+							.award__head 
+								img(src="img/a-1.svg", alt="")
+							.h3 Неоднократный победитель в&nbsp;номинации Партнёр года Microsoft
+					.award._a-2._gray._span-1
+						.award__wrapper
+							.award__head 
+								img(src="img/a-2.svg", alt="")
+							.h3  Обладатель партнёрского статуса Kaspersky Platinum Partner более 10 лет
+					.award._a-3._dark._span-2
+						.award__wrapper
+							.award__head 
+								img(src="img/a-3.svg", alt="")
+							.h3 Обладатель 19 из 20 золотых компетенций Microsoft
+					.award._a-4._dark._span-2
+						.award__wrapper
+							.award__head 
+								img(src="img/a-4.svg", alt="")
+							.h3 Обладатель партнёрского статуса Yandex Cloud Professional и авторизованный поставщик решение Яндекс360
+
+					.award._a-5._white._span-2
+						.award__wrapper
+							.award__head 
+								img(src="img/a-5.svg", alt="")
+							.h3._color-gray А  так же
+							ul._two-column 
+								li Платиновый партнёр ELMA
+								li Commvault Market Builder (2021)
+								li VMware Principle Partner
+								li IBM Platinum Gold Reseller
+								li IBM Platinum Gold Reseller
+								li._color-gray и другие
+		.feedbackb
+			.inner 
+				.feedbackb__row 
+					.feedbackb__left 
+						.small-title Свяжитесь с нами
+						.h3  Если вы хотите записаться на консультацию, оставьте свои данные и наши специалисты свяжутся с вами в ближайшее время.
+						.feedbackb__anim
+							img(src="img/arrow.svg", alt="")
+							img(src="img/arrow.svg", alt="")
+							img(src="img/arrow.svg", alt="")
+					.feedbackb__right
+						form.feedbackb__form(action="/",method="POST")
+							h5 Форма обратной связи
+							.form-item 
+								input(type="text",name="name",placeholder="Имя Фамилия")
+							.form-item 
+								input(type="text",name="phone",placeholder="Телефон")
+							.form-item 
+								input(type="text",name="mail",placeholder="Email")
+							.form-item 
+								input(type="text",name="company",placeholder="Компания")
+							.form-item 
+								input(type="text",name="positiobn",placeholder="Должность")
+							.form-item 
+								input(type="text",name="peoples",placeholder="Кол-во сотрудников")
+							.feedbackb__form__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных
+							button.btn-arrow(type="submit") 
+								span Отправить заявку
+								.btn-arrow__circle
+									<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+									</svg>
+
+
+
+

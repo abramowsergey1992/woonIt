@@ -1,0 +1,144 @@
+.footer {
+	background: #070B13;
+
+	@media(max-width:992px) {
+		padding-top: 140px;
+	}
+}
+
+.footer-top {
+	padding-top: 77px;
+	padding-bottom: 30px;
+	border-bottom: 2px solid rgba(210, 210, 210, 0.2);
+
+	@media(max-width:992px) {
+		text-align: center;
+	}
+
+	&__logo {
+		margin-bottom: 33px;
+
+		@media(max-width:992px) {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
+	&__divider {
+		&::after {
+			color: #fff;
+			content: "|";
+			margin: 0 16px;
+			display: inline-block;
+		}
+	}
+
+	&__contact {
+		display: flex;
+		flex-direction: row;
+		font-weight: 600;
+		font-size: 32px;
+		@include lh(32, 32);
+		letter-spacing: -0.03em;
+
+		@media(max-width:992px) {
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 25px;
+		}
+
+		a {
+
+			text-decoration: none;
+			position: relative;
+			white-space: nowrap;
+
+			span {
+				background-color: #fff;
+			}
+
+			span {
+				color: transparent !important;
+				-webkit-background-clip: text !important;
+				background-clip: text !important;
+			}
+
+			&:hover {
+				span {
+					background: linear-gradient(271.32deg, #1C8CC0 1.07%, #6822BB 98.87%);
+				}
+
+				&::after {
+					opacity: 0;
+				}
+			}
+
+			&[href^="mailto:"] {
+				&::after {
+					display: block;
+					height: 1px;
+					width: 100%;
+					background: #fff;
+					left: 0;
+					bottom: 0;
+					content: '';
+				}
+			}
+
+		}
+	}
+}
+
+.footer-bottom {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+
+	a {
+		color: #fff;
+		text-underline-offset: 1px;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&__ctm {
+		margin-left: auto;
+		font-weight: 600;
+		font-size: 11.8919px;
+		line-height: 14px;
+		text-decoration: none;
+
+		@media(max-width:992px) {
+			margin-right: auto;
+		}
+
+		svg {
+			margin-left: 5px;
+			position: relative;
+			top: 3px;
+			fill: #fff
+		}
+
+		&:hover {
+			svg {
+				fill: url(#grandient)
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		gap: 20px 50px;
+
+		@media(max-width:992px) {
+			flex-direction: column;
+			text-align: center;
+		}
+	}
+}
