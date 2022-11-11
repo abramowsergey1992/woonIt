@@ -3,49 +3,55 @@ block title
 	title W-ONE IT 
 block content
 		#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
-			.fix-circle-1.fix-circle-step
-				p
-					color Полный цикл проекта 
-					br
-					| по замене: от консультации до внедрения и поддержки
-			.fix-circle-2.fix-circle-step
-				p
-					color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
-						br
-						| еще нужно «подружить» новое решение с остальными
-			.fix-circle-4.fix-circle-step
-				p
-					color Акция действует
-						br
-						| до 30 ноября 2022!
-				a.btn-arrow(href="#")
-					span Запросить консультацию
-					.btn-arrow__circle
-						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-						</svg>
-			.fix-circle-3.fix-circle-step
-				.fix-circle-3__bg
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-					img(src="img/circle-bg.svg", alt="")
-				p
-					color Выберите категорию
-					| - 
-					br
-					| мы подберем необходимое решение...
-				a.btn-arrow(href="#")
-					span Запросить консультацию
-					.btn-arrow__circle
-						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-						</svg>
-		#top.inner.top
+			#fix-cicrle-wrap.fix-cicrle__wrap
+				.fix-circle-1.fix-circle-step
+					.fix-circle-step__wrap
+						p
+							color Полный цикл проекта 
+							br
+							| по замене: от консультации до внедрения и поддержки
+				.fix-circle-2.fix-circle-step
+					.fix-circle-step__wrap
+						p
+							color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
+								br
+								| еще нужно «подружить» новое решение с остальными
+			
+				.fix-circle-3.fix-circle-step
+					.fix-circle-step__wrap
+						.fix-circle-3__bg
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+							img(src="img/circle-bg.svg", alt="")
+						p
+							color Выберите категорию 
+							| - 
+							br
+							| мы подберем необходимое решение...
+						a.btn-arrow(href="#")
+							span Запросить консультацию
+							.btn-arrow__circle
+								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+								</svg>
+				.fix-circle-4.fix-circle-step
+					.fix-circle-step__wrap
+						p
+							color Акция действует
+								br
+								| до 30 ноября 2022!
+						a.btn-arrow(href="#")
+							span Запросить консультацию
+							.btn-arrow__circle
+								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+								</svg>
+		.observer#top.inner.top
 			h1 Замена решений
 				br
 				| Microsoft
@@ -56,8 +62,11 @@ block content
 				br
 				| до внедрения и поддержки
 			
-			iframe(src="3d.html", frameborder="0").frame
-		#about
+			
+			.phisicbox
+			.top__wrap
+				.top__mouse Замените решение
+		.observer#about(data-step="2")
 			.about
 				.inner
 					img(src="img/bg.svg", alt="").about__bg
@@ -69,7 +78,7 @@ block content
 								color многих 
 								| компаний.
 						.circle-mob Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого еще нужно «подружить» новое решение с остальными 
-			.about-wh.inner
+			#about-wh.about-wh.inner
 				.inner
 					.about-wh__text
 						.about-wh__text-back
@@ -84,8 +93,7 @@ block content
 							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
 							</svg>
-
-		#solutions.solutions.inner
+		.observer#solutions(data-step="3").solutions.inner
 			.inner
 				.small-title Решения
 				h2 Матрица замещающих решений
@@ -688,8 +696,9 @@ block content
 													br
 													| RuSIEM
 												span._arrow
-					
-		#free-consultation.free-consultation
+		
+		
+		.observer#free-consultation(data-step="4").free-consultation
 			.free-consultation__bg-wrap 
 				.free-consultation__bg
 				+picture('freeconsultation','png').free-consultation__img
@@ -699,8 +708,7 @@ block content
 						.small-title Нужна помощь с выбором или внедрением?
 						h2 Успевайте записаться на бесплатную консультацию!
 						p Со специалистами Wone IT, где в формате живого общения вы разберёте ситуацию внутри компании, выявите подходящие для вас решения, пройдёте демонстрацию или загрузите пилот.
-
-		#why.why.inner
+		.observer#why.why.inner(data-step="10")
 			.why__head
 				.small-title Почему Wone IT
 				.why__nav
@@ -735,7 +743,7 @@ block content
 								| на результат
 							p Мы понимаем, что основной задачей  для вас является развитие бизнеса,  а не внедрение какого-либо решения. Поэтому мы погружаемся в проект  как с технологической, так и с бизнес-стороны
 			.why-slider-back
-		#complex.complex.inner
+		.observer#complex.complex.inner
 			h2 Комплексное решение технологических задач и бизнес-экспертиза
 			.complex__tree
 				.complex__row-1
@@ -784,7 +792,7 @@ block content
 							p Авторизованное обучение в&nbsp;Академии Wone IT
 				
 				.complex__tree-line
-		#awards.awards 
+		.observer#awards.awards 
 			.inner 
 				h2  Награды и статусы
 				.awards__row
@@ -821,7 +829,7 @@ block content
 								li IBM Platinum Gold Reseller
 								li IBM Platinum Gold Reseller
 								li._color-gray и другие
-		.feedbackb
+		.observer.feedbackb
 			.inner 
 				.feedbackb__row 
 					.feedbackb__left 

@@ -1,4 +1,9 @@
 $(function () {
+	AOS.init();
+
+	document.addEventListener("aos:in", ({ detail }) => {
+		console.log("animated in", detail);
+	});
 	$("._mask-phone").each(function () {
 		Inputmask("+7 (999) 999-99-99").mask(this);
 	});

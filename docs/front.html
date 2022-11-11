@@ -120,44 +120,57 @@
       <div id="smooth-content">
         <div class="page">
           <div class="fix-cicrle" id="fix-cicrle" data-position="bottom" data-step="1"> 
-            <div class="fix-circle-1 fix-circle-step">
-              <p>
-                <color>Полный цикл проекта </color><br>по замене: от консультации до внедрения и поддержки
-              </p>
-            </div>
-            <div class="fix-circle-2 fix-circle-step">
-              <p>
-                <color>Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого <br>еще нужно «подружить» новое решение с остальными</color>
-              </p>
-            </div>
-            <div class="fix-circle-4 fix-circle-step">
-              <p>
-                <color>Акция действует<br>до 30 ноября 2022!</color>
-              </p><a class="btn-arrow" href="#"><span>Запросить консультацию</span>
-                <div class="btn-arrow__circle"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="fix-cicrle__wrap" id="fix-cicrle-wrap">
+              <div class="fix-circle-1 fix-circle-step">
+                <div class="fix-circle-step__wrap">
+                  <p>
+                    <color>Полный цикл проекта </color><br>по замене: от консультации до внедрения и поддержки
+                  </p>
+                </div>
+              </div>
+              <div class="fix-circle-2 fix-circle-step">
+                <div class="fix-circle-step__wrap">
+                  <p>
+                    <color>Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого <br>еще нужно «подружить» новое решение с остальными</color>
+                  </p>
+                </div>
+              </div>
+              <div class="fix-circle-3 fix-circle-step">
+                <div class="fix-circle-step__wrap">
+                  <div class="fix-circle-3__bg"><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""></div>
+                  <p>
+                    <color>Выберите категорию </color>- <br>мы подберем необходимое решение...
+                  </p><a class="btn-arrow" href="#"><span>Запросить консультацию</span>
+                    <div class="btn-arrow__circle"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
 </svg>
-                </div></a>
-            </div>
-            <div class="fix-circle-3 fix-circle-step">
-              <div class="fix-circle-3__bg"><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""><img src="img/circle-bg.svg" alt=""></div>
-              <p>
-                <color>Выберите категорию</color>- <br>мы подберем необходимое решение...
-              </p><a class="btn-arrow" href="#"><span>Запросить консультацию</span>
-                <div class="btn-arrow__circle"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    </div></a>
+                </div>
+              </div>
+              <div class="fix-circle-4 fix-circle-step">
+                <div class="fix-circle-step__wrap">
+                  <p>
+                    <color>Акция действует<br>до 30 ноября 2022!</color>
+                  </p><a class="btn-arrow" href="#"><span>Запросить консультацию</span>
+                    <div class="btn-arrow__circle"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
 </svg>
-                </div></a>
+                    </div></a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="inner top" id="top">
+          <div class="observer inner top" id="top">
             <h1>Замена решений<br>Microsoft</h1>
             <div class="circle-mob"> 
               <color>Полный цикл проекта </color><br>по замене: от консультации<br>до внедрения и поддержки
             </div>
-            <iframe class="frame" src="3d.html" frameborder="0"></iframe>
+            <div class="phisicbox"></div>
+            <div class="top__wrap">
+              <div class="top__mouse">Замените решение</div>
+            </div>
           </div>
-          <div id="about">
+          <div class="observer" id="about" data-step="2">
             <div class="about">
               <div class="inner"><img class="about__bg" src="img/bg.svg" alt="">
                 <div class="inner">
@@ -170,7 +183,7 @@
                 </div>
               </div>
             </div>
-            <div class="about-wh inner">
+            <div class="about-wh inner" id="about-wh">
               <div class="inner">
                 <div class="about-wh__text">
                   <div class="about-wh__text-back">
@@ -186,7 +199,7 @@
               </div>
             </div>
           </div>
-          <div class="solutions inner" id="solutions">
+          <div class="observer solutions inner" id="solutions" data-step="3">
             <div class="inner">
               <div class="small-title">Решения</div>
               <h2>Матрица замещающих решений</h2>
@@ -650,7 +663,7 @@
               </div>
             </div>
           </div>
-          <div class="free-consultation" id="free-consultation">
+          <div class="observer free-consultation" id="free-consultation" data-step="4">
             <div class="free-consultation__bg-wrap"> 
               <div class="free-consultation__bg"></div>
               <picture>
@@ -667,7 +680,7 @@
               </div>
             </div>
           </div>
-          <div class="why inner" id="why">
+          <div class="observer why inner" id="why" data-step="10">
             <div class="why__head">
               <div class="small-title">Почему Wone IT</div>
               <div class="why__nav">
@@ -705,7 +718,7 @@
             </div>
             <div class="why-slider-back"></div>
           </div>
-          <div class="complex inner" id="complex">
+          <div class="observer complex inner" id="complex">
             <h2>Комплексное решение технологических задач и бизнес-экспертиза</h2>
             <div class="complex__tree">
               <div class="complex__row-1">
@@ -772,7 +785,7 @@
               <div class="complex__tree-line"></div>
             </div>
           </div>
-          <div class="awards" id="awards"> 
+          <div class="observer awards" id="awards"> 
             <div class="inner"> 
               <h2> Награды и статусы</h2>
               <div class="awards__row">
@@ -817,7 +830,7 @@
               </div>
             </div>
           </div>
-          <div class="feedbackb">
+          <div class="observer feedbackb">
             <div class="inner"> 
               <div class="feedbackb__row"> 
                 <div class="feedbackb__left"> 

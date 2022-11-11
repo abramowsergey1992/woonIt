@@ -1,6 +1,29 @@
+@keyframes delopacity {
+	from {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
 .fix-cicrle {
 	@media(max-width:$NotCircle) {
 		display: none;
+	}
+
+	&__wrap {
+		position: absolute;
+		top: calc(50vh - 250px);
+		width: 100%;
+		height: 100%;
+		left: 0;
+		will-change: top;
 	}
 
 	max-width: 433px;
@@ -9,7 +32,9 @@
 	right: calc(((100vw - 1440px)/2) + 45px);
 	z-index: 100;
 	position: fixed;
-	bottom: 30px;
+	top: 50%;
+	transform: translateY(-50%);
+
 
 	@media(max-width:1440px) {
 		right: 40px;
@@ -27,7 +52,6 @@
 	line-height: 27px;
 	text-align: center;
 	letter-spacing: -0.03em;
-	transition: bottom 0.5s;
 
 
 	.btn-arrow {
@@ -35,61 +59,62 @@
 	}
 
 	&[data-position="center"] {
-		bottom: calc(50% - 215px);
+		transform: scale(0);
 	}
 
 	&[data-step="10"] {
-		display: none;
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	&[data-step="1"] {
+		pointer-events: none;
+
+		.fix-circle-2,
+		.fix-circle-3,
+		.fix-circle-4 {
+			transform: scale(0);
+		}
+
 		.fix-circle-1 {
 			transform: scale(1);
-			opacity: 1 !important;
 		}
 	}
 
 	&[data-step="2"] {
-		.fix-circle-1 {
-			transform: scale(1);
-			opacity: 1 !important;
+
+		.fix-circle-3,
+		.fix-circle-4 {
+			transform: scale(0);
 		}
 
 		.fix-circle-2 {
 			transform: scale(1);
-			opacity: 1 !important;
 		}
 	}
 
 	&[data-step="3"] {
-		.fix-circle-1 {
-			display: none;
+
+		.fix-circle-1,
+		.fix-circle-2 {
+			animation: delopacity 1.2s ease-in-out;
+			animation-fill-mode: forwards;
 		}
 
-		.fix-circle-2 {
-			display: none;
+		.fix-circle-4 {
+			transform: scale(0);
 		}
 
 		.fix-circle-3 {
-			transform: scale(1) !important;
-			opacity: 1;
+			transform: scale(1);
 		}
 	}
 
 	&[data-step="4"] {
-		.fix-circle-1 {
-			transform: scale(1);
-			opacity: 0 !important;
-		}
 
-		.fix-circle-2 {
-			transform: scale(1);
-			opacity: 0 !important;
-		}
 
 		.fix-circle-4 {
 			transform: scale(1);
-			opacity: 1 !important;
 		}
 	}
 }
@@ -111,9 +136,8 @@
 }
 
 .fix-circle-step {
-	opacity: 0;
-	transform: scale(0);
-	transition: opacity 0.01s, transform 1s;
+	will-change: transform;
+	transition: transform 0.5s;
 }
 
 #about {
@@ -272,6 +296,7 @@ color {
 			top: 0;
 			width: 100%;
 			height: 100%;
+
 			transition: top 0.5s;
 			will-change: top;
 		}
@@ -335,6 +360,29 @@ color {
 	height: calc(var(--vh, 1vh)*100);
 	padding-top: 110px;
 	margin-bottom: 157px;
+
+
+
+	&__mouse {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 19px;
+		letter-spacing: -0.03em;
+		border-radius: 20px;
+		white-space: nowrap;
+		background: #FFFFFF;
+		color: #070B13;
+		position: absolute;
+		padding: 5px 10px;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity 0.3s;
+		will-change: left, top, opacity;
+
+		.top:hover & {
+			opacity: 1;
+		}
+	}
 
 	h1 {
 		text-align: left;
@@ -611,6 +659,7 @@ color {
 		letter-spacing: -0.03em;
 		white-space: nowrap;
 		transition: transform 0.3s;
+		will-change: transform;
 		cursor: pointer;
 
 		&::after {
@@ -653,6 +702,7 @@ color {
 		overflow: hidden;
 		transition: color 0.3s, border 0.3s;
 		cursor: pointer;
+		will-change: color, border;
 		box-sizing: content-box;
 
 		&._active,
@@ -671,6 +721,7 @@ color {
 			top: 0;
 			opacity: 0;
 			transition: opacity 0.3s;
+			will-change: opacity;
 			width: 100%;
 			height: 100%;
 			z-index: 1;
@@ -876,6 +927,7 @@ color {
 							right: 0px;
 							top: 0px;
 							transition: background 0.3s;
+							will-change: background;
 							background: $grandient;
 							overflow: hidden;
 							border-radius: 50%;
@@ -894,6 +946,7 @@ color {
 								background-repeat: no-repeat;
 								display: block;
 								content: '';
+								will-change: background, transform;
 								transition: background 0.3s, transform 0.3s;
 							}
 						}
@@ -1030,6 +1083,7 @@ color {
 				content: '';
 				background: $grandient;
 				opacity: 0;
+				will-change: opacity;
 				transition: opacity 0.3s;
 			}
 
