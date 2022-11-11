@@ -267,14 +267,18 @@ $(function () {
 		Composite.add(engine.world, [box]);
 	}
 	// create two boxes and a ground
-
+	let groundBottomp = window.innerHeight + 10;
+	if (window.innerWidth <= 992) {
+		groundBottomp = window.innerHeight + 0;
+	}
 	var groundBottom = Bodies.rectangle(
 		window.innerWidth / 2,
-		window.innerHeight + 10,
+		groundBottomp,
 		window.innerWidth,
 		10,
 		{
 			isStatic: true,
+			render: { visible: false },
 		}
 	);
 	var groundLeft = Bodies.rectangle(
@@ -284,6 +288,7 @@ $(function () {
 		window.innerHeight,
 		{
 			isStatic: true,
+			render: { visible: false },
 		}
 	);
 	var groundRight = Bodies.rectangle(
@@ -293,6 +298,7 @@ $(function () {
 		window.innerHeight,
 		{
 			isStatic: true,
+			render: { visible: false },
 		}
 	);
 
@@ -324,8 +330,8 @@ $(function () {
 							100
 					),
 					h,
-					solution[i]["w"] * delta * delta,
-					solution[i]["h"] * delta * delta,
+					solution[i]["w"] * delta,
+					solution[i]["h"] * delta,
 					{
 						// isStatic: true,
 

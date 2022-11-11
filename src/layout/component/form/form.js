@@ -10,6 +10,9 @@ $(function () {
 	$("._mask-date").each(function () {
 		Inputmask("99.99.9999").mask(this);
 	});
+	$("._mask-int").each(function () {
+		Inputmask("9{1,10}").mask(this);
+	});
 	if ($("#popup-feedback-form").length) {
 		let validContacnt = $("#popup-feedback-form").validate({
 			errorPlacement: function (error, element) {},

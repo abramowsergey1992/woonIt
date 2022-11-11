@@ -380,6 +380,10 @@ color {
 		transition: opacity 0.3s;
 		will-change: left, top, opacity;
 
+		@media(max-width:992px) {
+			display: none;
+		}
+
 		.top:hover & {
 			opacity: 1;
 		}
@@ -466,6 +470,10 @@ color {
 		background: #fff;
 		position: absolute;
 		opacity: 0;
+
+		@media(max-width:992px) {
+			display: none;
+		}
 
 		.about-wh:hover & {
 			opacity: 1;
@@ -784,6 +792,7 @@ color {
 
 		@media(max-width:992px) {
 			padding-right: 30px;
+			font-size: 16px;
 		}
 	}
 
@@ -859,6 +868,23 @@ color {
 				background-clip: text;
 				text-fill-color: transparent;
 			}
+		}
+
+		@media(max-width:992px) {
+			span {
+				background: #070B13 !important;
+			}
+
+			span {
+				-webkit-background-clip: text !important;
+				-webkit-text-fill-color: transparent !important;
+				background-clip: text !important;
+				text-fill-color: transparent !important;
+			}
+		}
+
+		.solution__toggle {
+			background: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 8L8 1.8L2 8' stroke='black' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
 		}
 
 		table {
@@ -1017,6 +1043,22 @@ color {
 			padding-bottom: 60px;
 		}
 
+		.btn-arrow {
+			margin-top: 20px;
+
+			span {
+				color: #fff;
+			}
+
+			.btn-arrow__circle {
+				background: #Fff;
+
+				path {
+					stroke: #14181F
+				}
+			}
+		}
+
 		h2,
 		.h2 {
 			margin-bottom: 20px;
@@ -1039,6 +1081,14 @@ color {
 			font-size: 20px;
 			line-height: 27px;
 			letter-spacing: -0.03em;
+
+			@media(max-width:992px) {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 19px;
+				letter-spacing: -0.03em;
+			}
+
 		}
 	}
 
@@ -1206,11 +1256,11 @@ color {
 	border-radius: 50px;
 	position: relative;
 
-	@media(max-width:992px) {
+	@media(max-width:1100px) {
 		padding: 40px 30px;
 		border-radius: 30px;
 		overflow: hidden;
-		max-width: calc(100% - 20px);
+		max-width: calc(100%);
 	}
 
 	h2,
@@ -1253,6 +1303,7 @@ color {
 		position: absolute;
 		width: 0;
 		left: 0;
+		will-change: width;
 
 		.complex._visible & {
 			animation: complexLineW 4.5s linear;
@@ -1302,6 +1353,7 @@ color {
 			height: 0%;
 			width: 2px;
 			background: linear-gradient(90deg, #653290 0%, #ED2239 100%);
+			will-change: height;
 
 			.complex._visible & {
 				animation: complexLineH 1s linear;
