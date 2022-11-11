@@ -2,66 +2,19 @@ extends ../../layout/layout
 block title
 	title W-ONE IT 
 block content
-		#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
-			#fix-cicrle-wrap.fix-cicrle__wrap
-				.fix-circle-1.fix-circle-step
-					.fix-circle-step__wrap
-						p
-							color Полный цикл проекта 
-							br
-							| по замене: от консультации до внедрения и поддержки
-				.fix-circle-2.fix-circle-step
-					.fix-circle-step__wrap
-						p
-							color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
-								br
-								| еще нужно «подружить» новое решение с остальными
-			
-				.fix-circle-3.fix-circle-step
-					.fix-circle-step__wrap
-						.fix-circle-3__bg
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-							img(src="img/circle-bg.svg", alt="")
-						p
-							color Выберите категорию 
-							| - 
-							br
-							| мы подберем необходимое решение...
-						a.btn-arrow(href="#",data-popup="#feedback")
-							span Запросить консультацию
-							.btn-arrow__circle
-								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-								</svg>
-				.fix-circle-4.fix-circle-step
-					.fix-circle-step__wrap
-						p
-							color Акция действует
-								br
-								| до 30 ноября 2022!
-						a.btn-arrow(href="#",data-popup="#feedback")
-							span Запросить консультацию
-							.btn-arrow__circle
-								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-								</svg>
+
+
 		.observer#top.inner.top
 			h1 Замена решений
 				br
-				| Microsoft
+				span Microsoft
 			.circle-mob 
 				color Полный цикл проекта 
 				br
 				| по замене: от консультации
 				br
 				| до внедрения и поддержки
-			
+				.small-title  Кликните, чтобы  заменить решение
 			
 			.phisicbox
 			.top__wrap
@@ -78,27 +31,26 @@ block content
 								color многих 
 								| компаний.
 						.circle-mob Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого еще нужно «подружить» новое решение с остальными 
-			#about-wh.about-wh.inner
-				.inner
-					.about-wh__text
-						.about-wh__text-back
-							p Компания Wone IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.
-						
-						.about-wh__text-front 
-							<p>Компания W<color>one</color> IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.</p>
+		#about-wh.about-wh.inner
+			.inner
+				.about-wh__text
+					.about-wh__text-back
+						p Компания Wone IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.
+					
+					.about-wh__text-front 
+						<p>Компания W<color>one</color> IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.</p>
 
-					a(href="#").about-wh__link.btn-arrow(data-popup="#feedback")
-						span Запросить консультацию
-						.btn-arrow__circle
-							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-							</svg>
-				.about-wh__mouse.btn-arrow 
-					span Запросить консультацию
-					.btn-arrow__circle
-						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
-						</svg>
+				.about-wh__link(data-popup="#feedback")
+					
+			.about-wh__mouse.btn-arrow 
+				span Запросить консультацию
+				.btn-arrow__circle
+					<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
+					</svg>
+
+
+	
 		.observer#solutions(data-step="3").solutions.inner
 			.inner
 				.small-title Решения
@@ -705,6 +657,58 @@ block content
 		
 		
 		.observer#free-consultation(data-step="4").free-consultation
+			#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
+				#fix-cicrle-wrap.fix-cicrle__wrap
+					.fix-circle-1.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Полный цикл проекта 
+								br
+								| по замене: от консультации до внедрения и поддержки
+					.fix-circle-2.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
+									br
+									| еще нужно «подружить» новое решение с остальными
+				
+					.fix-circle-3.fix-circle-step
+						.fix-circle-step__wrap
+							.fix-circle-3__bg
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+							p
+								color Выберите категорию 
+								| - 
+								br
+								| мы подберем необходимое решение...
+							a.btn-arrow(href="#",data-popup="#feedback")
+								span Запросить консультацию
+								.btn-arrow__circle
+									<svg 2width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
+									</svg>
+
+
+					.fix-circle-4.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Акция действует
+									br
+									| до 30 ноября 2022!
+							a.btn-arrow(href="#",data-popup="#feedback")
+								span Запросить консультацию
+								.btn-arrow__circle
+									<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
+									</svg>
+
 			.free-consultation__bg-wrap 
 				.free-consultation__bg
 				+picture('freeconsultation','png').free-consultation__img
@@ -719,9 +723,11 @@ block content
 							a.btn-arrow(href="#",data-popup="#feedback")
 								span Запросить консультацию
 								.btn-arrow__circle
-									<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+									<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
 									</svg>
+
+
 		.observer#why.why.inner(data-step="10")
 			.why__head
 				.small-title Почему Wone IT
@@ -756,6 +762,12 @@ block content
 								br
 								| на результат
 							p Мы понимаем, что основной задачей  для вас является развитие бизнеса,  а не внедрение какого-либо решения. Поэтому мы погружаемся в проект  как с технологической, так и с бизнес-стороны
+					.swiper-slide.why-it
+						.why-it__wrap
+							h3  Знаем бизнеc
+							p Большой опыт работы
+								br
+								| с информационными системами позволяет нам досконально понимать, как устроен бизнес самых разных индустрий
 			.why-slider-back
 		.inner
 			.observer#complex.complex
@@ -871,13 +883,19 @@ block content
 								input(data-rule-required, type="text",name="positiobn",placeholder="Должность")
 							.form-item 
 								input._mask-int(data-rule-required, type="text",name="peoples",placeholder="Кол-во сотрудников")
-							.feedbackb__form__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных
+							.feedbackb__form__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с 
+								a(href="#") Политикой конфиденциальности
+								| и даю согласие на 
+								a(href="#") обработку персональных данных
 							button.feedbackb__form-btn.btn-arrow(type="submit") 
 								span Отправить заявку
 								.btn-arrow__circle
-									<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+									<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
 									</svg>
+
+
+
 
 
 

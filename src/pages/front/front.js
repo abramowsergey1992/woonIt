@@ -95,6 +95,9 @@ $(function () {
 			wh = $("#about-wh").innerHeight();
 			solutions = $("#solutions").innerHeight();
 			complex = $("#complex").innerHeight();
+			freeConsultationOffset =
+				$("#free-consultation").innerHeight() -
+				$("#fix-cicrle").height();
 			freeConsultation = $("#free-consultation").innerHeight() + 350;
 			if (solutionss) solutionss.refresh();
 			// console.log(solutions, solutionss);
@@ -133,9 +136,9 @@ $(function () {
 			})
 			.addTo(controller);
 		new ScrollMagic.Scene({
-			triggerElement: "#why",
+			triggerElement: "#free-consultation",
 			duration: 300,
-			offset: 300,
+			offset: freeConsultationOffset,
 		})
 			// .addIndicators({ name: "why" })
 			.on("enter ", function () {

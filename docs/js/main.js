@@ -1,4 +1,5 @@
 $(function () {
+	let once = true;
 	let solution = [
 		{
 			w: 100,
@@ -314,45 +315,50 @@ $(function () {
 	});
 
 	document.querySelector(".phisicbox").addEventListener("click", function () {
-		Composite.remove(engine.world, groundBottom);
-		setTimeout(function () {
-			Composite.add(engine.world, [groundBottom]);
-			var length = solution.length,
-				element = null;
-			let h = 0;
+		if (once) {
+			once = false;
+			Composite.remove(engine.world, groundBottom);
+			setTimeout(function () {
+				Composite.add(engine.world, [groundBottom]);
+				var length = solution.length,
+					element = null;
+				let h = 0;
 
-			for (var i = 0; i < length; i++) {
-				h -= 100;
-				element = solution[i];
-				var box = Bodies.rectangle(
-					Math.floor(
-						Math.random() * (window.innerWidth / 1.5 - 100 + 1) +
-							100
-					),
-					h,
-					solution[i]["w"] * delta,
-					solution[i]["h"] * delta,
-					{
-						// isStatic: true,
+				for (var i = 0; i < length; i++) {
+					h -= 100;
+					element = solution[i];
+					var box = Bodies.rectangle(
+						Math.floor(
+							Math.random() *
+								(window.innerWidth / 1.5 - 100 + 1) +
+								100
+						),
+						h,
+						solution[i]["w"] * delta,
+						solution[i]["h"] * delta,
+						{
+							// isStatic: true,
 
-						render: {
-							sprite: {
-								texture: "img/" + solution[i]["img"],
-								// texture: "/img/freeconsultation.png",
-								xScale: 1 * delta,
-								yScale: 1 * delta,
+							render: {
+								sprite: {
+									texture: "img/" + solution[i]["img"],
+									// texture: "/img/freeconsultation.png",
+									xScale: 1 * delta,
+									yScale: 1 * delta,
+								},
 							},
-						},
-					}
-				);
-				Composite.add(engine.world, [box]);
-			}
-		}, 2000);
+						}
+					);
+					Composite.add(engine.world, [box]);
+				}
+			}, 2000);
+		}
 	});
 	// run the engine
 	Runner.run(runner, engine);
 });
 
+$(function(){})
 $(function () {
 	var $cursor = $(".top__mouse");
 
@@ -450,6 +456,9 @@ $(function () {
 			wh = $("#about-wh").innerHeight();
 			solutions = $("#solutions").innerHeight();
 			complex = $("#complex").innerHeight();
+			freeConsultationOffset =
+				$("#free-consultation").innerHeight() -
+				$("#fix-cicrle").height();
 			freeConsultation = $("#free-consultation").innerHeight() + 350;
 			if (solutionss) solutionss.refresh();
 			// console.log(solutions, solutionss);
@@ -488,9 +497,9 @@ $(function () {
 			})
 			.addTo(controller);
 		new ScrollMagic.Scene({
-			triggerElement: "#why",
+			triggerElement: "#free-consultation",
 			duration: 300,
-			offset: 300,
+			offset: freeConsultationOffset,
 		})
 			// .addIndicators({ name: "why" })
 			.on("enter ", function () {
@@ -666,7 +675,109 @@ $(function () {
 	});
 });
 
+$(function () {
+	AOS.init();
+
+	document.addEventListener("aos:in", ({ detail }) => {
+		console.log("animated in", detail);
+	});
+	$("._mask-phone").each(function () {
+		Inputmask("+7 (999) 999-99-99").mask(this);
+	});
+	$("._mask-date").each(function () {
+		Inputmask("99.99.9999").mask(this);
+	});
+	$("._mask-int").each(function () {
+		Inputmask("9{1,10}").mask(this);
+	});
+	if ($("#popup-feedback-form").length) {
+		let validContacnt = $("#popup-feedback-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(".feedback-popup__sbmt").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						$(".feedback-popup").attr("data-state", "success");
+						$(".feedback-popup__sbmt").removeAttr("disabled");
+					},
+					error: function () {
+						$(".feedback-popup").attr("data-state", "error");
+						$(".feedback-popup__sbmt").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+	if ($("#feedback-form").length) {
+		let validFeedback = $("#feedback-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(".feedbackb__form-btn").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "success");
+						$(".feedbackb__form-btn").removeAttr("disabled");
+					},
+					error: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "error");
+						$("feedbackb__form-btn").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+});
+
 $(function(){})
+$(function () {
+	$(".popup__close,.popup__overlay").click(function () {
+		let popup = $(this).closest(".popup");
+		popup.removeClass("_animate");
+		setTimeout(function () {
+			popup.removeClass("_display");
+		}, 500);
+	});
+	$("[data-popup]").click(function () {
+		let popup = $($(this).data("popup"));
+		popup.attr("data-state", "");
+		popup.find("input").val("");
+		popup.addClass("_display");
+		setTimeout(function () {
+			popup.addClass("_animate");
+		}, 500);
+	});
+});
+
 $(function () {
 	$(".header__mob-menu").click(function () {
 		$(".header-mob").fadeIn();
@@ -766,109 +877,6 @@ $(function () {
 		// $menuLinks.removeClass("_active");
 		// console.log(link);
 		// $("[href='#" + link + "']").addClass("_active");
-	});
-});
-
-$(function(){})
-$(function () {
-	AOS.init();
-
-	document.addEventListener("aos:in", ({ detail }) => {
-		console.log("animated in", detail);
-	});
-	$("._mask-phone").each(function () {
-		Inputmask("+7 (999) 999-99-99").mask(this);
-	});
-	$("._mask-date").each(function () {
-		Inputmask("99.99.9999").mask(this);
-	});
-	$("._mask-int").each(function () {
-		Inputmask("9{1,10}").mask(this);
-	});
-	if ($("#popup-feedback-form").length) {
-		let validContacnt = $("#popup-feedback-form").validate({
-			errorPlacement: function (error, element) {},
-			submitHandler: function (form) {
-				$(".feedback-popup__sbmt").attr("disabled", "disabled");
-				$.ajax({
-					url: $(form).attr("action"),
-					data: $(form).serialize(),
-					method: "POST",
-					headers: {
-						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-							"content"
-						),
-					},
-					context: document.body,
-					success: function () {
-						$(".feedback-popup").attr("data-state", "success");
-						$(".feedback-popup__sbmt").removeAttr("disabled");
-					},
-					error: function () {
-						$(".feedback-popup").attr("data-state", "error");
-						$(".feedback-popup__sbmt").removeAttr("disabled");
-					},
-				});
-			},
-		});
-	}
-	if ($("#feedback-form").length) {
-		let validFeedback = $("#feedback-form").validate({
-			errorPlacement: function (error, element) {},
-			submitHandler: function (form) {
-				$(".feedbackb__form-btn").attr("disabled", "disabled");
-				$.ajax({
-					url: $(form).attr("action"),
-					data: $(form).serialize(),
-					method: "POST",
-					headers: {
-						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-							"content"
-						),
-					},
-					context: document.body,
-					success: function () {
-						let popup = $("#feedback");
-						popup.find("input").val("");
-						popup.addClass("_display");
-						setTimeout(function () {
-							popup.addClass("_animate");
-						}, 500);
-						$(".feedback-popup").attr("data-state", "success");
-						$(".feedbackb__form-btn").removeAttr("disabled");
-					},
-					error: function () {
-						let popup = $("#feedback");
-						popup.find("input").val("");
-						popup.addClass("_display");
-						setTimeout(function () {
-							popup.addClass("_animate");
-						}, 500);
-						$(".feedback-popup").attr("data-state", "error");
-						$("feedbackb__form-btn").removeAttr("disabled");
-					},
-				});
-			},
-		});
-	}
-});
-
-$(function () {
-	$(".popup__close,.popup__overlay").click(function () {
-		let popup = $(this).closest(".popup");
-		popup.removeClass("_animate");
-		setTimeout(function () {
-			popup.removeClass("_display");
-		}, 500);
-	});
-	$("[data-popup]").click(function () {
-		let popup = $($(this).data("popup"));
-		popup.attr("data-state", "");
-		popup.find("input").val("");
-		popup.addClass("_display");
-		setTimeout(function () {
-			popup.addClass("_animate");
-		}, 500);
 	});
 });
 
@@ -1097,3 +1105,5 @@ $(function () {
 	// 	});
 	// }, 300);
 });
+
+$(function(){})

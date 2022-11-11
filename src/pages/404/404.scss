@@ -1,0 +1,51 @@
+.circle-404 {
+	position: absolute;
+	right: 40px;
+	top: 50%;
+	transform: translateY(-50%);
+	background: linear-gradient(90deg, #653290 0%, #ED2239 100%);
+	border-radius: 50%;
+	height: 433px;
+	width: 433px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+	pointer-events: none;
+
+	&::after {
+		position: absolute;
+		left: 1px;
+		top: 1px;
+		z-index: 1;
+		border-radius: 50%;
+		width: calc(100% - 2px);
+		height: calc(100% - 2px);
+		display: block;
+		content: '';
+		color: #fff;
+		background-color: #070B13;
+	}
+
+	span {
+		position: relative;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 27px;
+		z-index: 2;
+		text-align: center;
+		letter-spacing: -0.03em;
+
+		color: #FFFFFF;
+	}
+}
+
+.p404-link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 220;
+}

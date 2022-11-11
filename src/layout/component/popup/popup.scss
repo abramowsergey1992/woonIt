@@ -258,6 +258,14 @@
 		line-height: 20px;
 		margin-top: 29px;
 		margin-bottom: 33px;
+
+		a {
+			color: #070B13;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	&__sbmt {

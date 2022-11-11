@@ -77,7 +77,10 @@
 						input(data-rule-required, type="text",name="positiobn",placeholder="Должность")
 					.form-item 
 						input._mask-int(data-rule-required, type="text",name="peoples",placeholder="Кол-во сотрудников")
-				.feedback-popup__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных
+				.feedback-popup__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с 
+					a(href="#") Политикой конфиденциальности
+					| и даю согласие на 
+					a(href="#") обработку персональных данных
 				button.feedback-popup__sbmt.btn-arrow(type="submit") 
 					span Отправить заявку
 					.btn-arrow__circle

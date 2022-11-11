@@ -1,4 +1,5 @@
 $(function () {
+	let once = true;
 	let solution = [
 		{
 			w: 100,
@@ -314,40 +315,44 @@ $(function () {
 	});
 
 	document.querySelector(".phisicbox").addEventListener("click", function () {
-		Composite.remove(engine.world, groundBottom);
-		setTimeout(function () {
-			Composite.add(engine.world, [groundBottom]);
-			var length = solution.length,
-				element = null;
-			let h = 0;
+		if (once) {
+			once = false;
+			Composite.remove(engine.world, groundBottom);
+			setTimeout(function () {
+				Composite.add(engine.world, [groundBottom]);
+				var length = solution.length,
+					element = null;
+				let h = 0;
 
-			for (var i = 0; i < length; i++) {
-				h -= 100;
-				element = solution[i];
-				var box = Bodies.rectangle(
-					Math.floor(
-						Math.random() * (window.innerWidth / 1.5 - 100 + 1) +
-							100
-					),
-					h,
-					solution[i]["w"] * delta,
-					solution[i]["h"] * delta,
-					{
-						// isStatic: true,
+				for (var i = 0; i < length; i++) {
+					h -= 100;
+					element = solution[i];
+					var box = Bodies.rectangle(
+						Math.floor(
+							Math.random() *
+								(window.innerWidth / 1.5 - 100 + 1) +
+								100
+						),
+						h,
+						solution[i]["w"] * delta,
+						solution[i]["h"] * delta,
+						{
+							// isStatic: true,
 
-						render: {
-							sprite: {
-								texture: "img/" + solution[i]["img"],
-								// texture: "/img/freeconsultation.png",
-								xScale: 1 * delta,
-								yScale: 1 * delta,
+							render: {
+								sprite: {
+									texture: "img/" + solution[i]["img"],
+									// texture: "/img/freeconsultation.png",
+									xScale: 1 * delta,
+									yScale: 1 * delta,
+								},
 							},
-						},
-					}
-				);
-				Composite.add(engine.world, [box]);
-			}
-		}, 2000);
+						}
+					);
+					Composite.add(engine.world, [box]);
+				}
+			}, 2000);
+		}
 	});
 	// run the engine
 	Runner.run(runner, engine);

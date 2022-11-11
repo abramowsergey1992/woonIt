@@ -1,5 +1,5 @@
 .header {
-	position: fixed;
+	position: absolute;
 	left: 0;
 	top: 10px;
 	width: 100%;
@@ -11,18 +11,21 @@
 	}
 
 
-
+	&._fill {
+		position: fixed;
+	}
 
 	&__row {
-		padding: 30px 40px;
+
+		padding: 30px 0px;
 		display: flex;
 		flex-direction: row;
 		gap: 10px;
 		align-items: center;
-		color: #fff;
+		color: rgb(81, 81, 81);
 		border-radius: 50px;
-		transition: background 0.3s, color 0.3s;
-		will-change: background, color;
+		// transition: background 0.3s, color 0.3s;
+		will-change: padding, background, color;
 
 		@media(max-width:992px) {
 			padding-left: 0;
@@ -34,6 +37,10 @@
 		}
 
 		._fill & {
+			padding: 20px 40px;
+			border: 1px solid #070B13;
+			;
+
 			@media(min-width:992px) {
 				background: #fff;
 				color: #070B13;
@@ -50,6 +57,10 @@
 		line-height: 0;
 		width: 140px;
 
+		&.ml-right {
+			margin-right: auto;
+		}
+
 		@media(max-width:600px) {
 			width: 100px;
 			margin-right: auto;
@@ -61,8 +72,8 @@
 
 		&-fill {
 			fill: #fff;
-			transition: fill 0.3s;
-			will-change: fill;
+			// transition: fill 0.3s;
+			// will-change: fill;
 
 			._fill & {
 				@media(min-width:992px) {
@@ -161,11 +172,15 @@
 			position: relative;
 			top: -2px;
 			margin-right: 5px;
-			fill: currentColor !important;
+
+			path {
+				fill: currentColor !important;
+			}
 
 			._fill & {
 				@media(min-width:992px) {
-					fill: #070B13;
+					fill: #070B13 !important;
+					;
 				}
 			}
 		}
@@ -365,7 +380,7 @@
 
 			a {
 				border: 2px solid #FFFFFF;
-				border-radius: 20px;
+				border-radius: 50px;
 				padding: 5px 10px;
 				font-weight: 700;
 				font-size: 24px;

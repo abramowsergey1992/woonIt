@@ -64,8 +64,9 @@
 	}
 
 	&[data-step="10"] {
-		opacity: 0;
-		pointer-events: none;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
 	}
 
 	&[data-step="1"] {
@@ -83,6 +84,10 @@
 	}
 
 	&[data-step="2"] {
+
+		.fix-circle-2 {
+			font-weight: 500;
+		}
 
 		.fix-circle-3,
 		.fix-circle-4 {
@@ -141,7 +146,7 @@
 	transition: transform 0.5s;
 }
 
-#about {
+#about-wh {
 	z-index: 110;
 	position: relative;
 }
@@ -362,7 +367,37 @@ color {
 	padding-top: 110px;
 	margin-bottom: 157px;
 
+	h1 {
+		._underline {
+			display: inline-block;
+			position: relative;
 
+			&::after {
+				display: block;
+				content: '';
+				height: 6px;
+				left: 0;
+				top: 50%;
+				width: 100%;
+				position: absolute;
+				transform: translateY(-50%);
+				background-image: $grandient;
+			}
+		}
+	}
+
+	.small-title {
+		margin-top: 20px;
+		color: #070B13;
+		background-color: #fff;
+	}
+
+	.circle-mob,
+	h1 {
+		z-index: 10;
+		position: relative;
+		pointer-events: none;
+	}
 
 	&__mouse {
 		font-weight: 700;
@@ -431,6 +466,8 @@ color {
 	}
 
 	&__text {
+		line-height: 110%;
+
 		color {
 			background: rgba(132, 137, 146, 1);
 		}
@@ -1268,6 +1305,8 @@ color {
 		margin-bottom: 81px;
 		color: #070B13;
 		max-width: 900px;
+		line-height: 110%;
+		font-weight: 800;
 
 		@media(max-width:992px) {
 			margin-bottom: 40px;
@@ -1304,6 +1343,7 @@ color {
 		width: 0;
 		left: 0;
 		will-change: width;
+		z-index: 10;
 
 		.complex._visible & {
 			animation: complexLineW 4.5s linear;
@@ -1366,7 +1406,7 @@ color {
 		&-wrapper {
 			position: relative;
 			padding: 30px;
-			border: 1px solid #AAADB7;
+			border: 1px solid #E9E9E9;
 		}
 
 		p {
@@ -1460,9 +1500,13 @@ color {
 		margin-top: 30px;
 		display: grid;
 		grid-template-columns: 5fr 5fr 4fr 4fr;
+		margin-left: -20px;
+		margin-right: -20px;
 
 		@media (max-width:992px) {
 			grid-template-columns: 1fr 1fr;
+			margin-left: 0px;
+			margin-right: -0px;
 		}
 	}
 
@@ -1504,7 +1548,8 @@ color {
 
 	h3,
 	.h3 {
-		font-weight: 500;
+		font-weight: 700;
+		margin-bottom: 15px;
 	}
 
 	&._dark {
@@ -1608,6 +1653,12 @@ color {
 	position: relative;
 	z-index: 4;
 
+	&__text {
+		a {
+			color: #070B13;
+		}
+	}
+
 	&__row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -1690,6 +1741,14 @@ color {
 			font-size: 12px;
 			line-height: 20px;
 			margin-bottom: 20px;
+
+			a {
+				color: #070B13;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 
 		.btn-arrow {
