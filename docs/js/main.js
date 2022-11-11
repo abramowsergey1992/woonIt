@@ -370,16 +370,26 @@ $(function () {
 		// 	top: e.pageY + 10,
 		// 	ease: Power4.easOut,
 		// });
-
-		clearTimeout(timer);
-
-		var timer = setTimeout(function () {
-			$cursor.removeClass("is-moving");
-		}, 1000);
 	}
 	$("#top").on("mousemove", moveCursorTop);
-	console.log("xss");
-
+	var $cursorWh = $(".about-wh__mouse");
+	var $wh = $(".about-wh__mouse");
+	var whTop = $("#about-wh").offset().top;
+	function moveCursorWh(e) {
+		$cursorWh.css({
+			left: e.pageX - +10,
+			top: e.pageY - whTop - 20,
+		});
+		// gsap.to($cursor, 0.01, {
+		// 	left: e.pageX + 10,
+		// 	top: e.pageY + 10,
+		// 	ease: Power4.easOut,
+		// });
+	}
+	$("#about-wh").on("mousemove", moveCursorWh);
+	// $("#about-wh").click(function () {
+	// 	$(".about-wh__link").trigger("click");
+	// });
 	setTimeout(function () {
 		let $menuLinks = $(".header__menu a");
 		function changeScroll(step = 0, href = 0) {
@@ -793,6 +803,7 @@ $(function () {
 	});
 });
 
+$(function(){})
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
 		let popup = $(this).closest(".popup");
@@ -812,7 +823,6 @@ $(function () {
 	});
 });
 
-$(function(){})
 $(function () {
 	// let $menuLinks = $(".header__menu a");
 	// function changeScroll(step = 0, href = 0) {

@@ -33,7 +33,7 @@ block content
 							| - 
 							br
 							| мы подберем необходимое решение...
-						a.btn-arrow(href="#")
+						a.btn-arrow(href="#",data-popup="#feedback")
 							span Запросить консультацию
 							.btn-arrow__circle
 								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +45,7 @@ block content
 							color Акция действует
 								br
 								| до 30 ноября 2022!
-						a.btn-arrow(href="#")
+						a.btn-arrow(href="#",data-popup="#feedback")
 							span Запросить консультацию
 							.btn-arrow__circle
 								<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -87,12 +87,18 @@ block content
 						.about-wh__text-front 
 							<p>Компания W<color>one</color> IT, как признанный эксперт в решениях Microsoft и вендор-агностик, предлагает к вашему рассмотрению подборку наиболее перспективных решений, которые способны заменить функционал Microsoft.</p>
 
-					a(href="#").about-wh__link.btn-arrow 
+					a(href="#").about-wh__link.btn-arrow(data-popup="#feedback")
 						span Запросить консультацию
 						.btn-arrow__circle
 							<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
 							</svg>
+				.about-wh__mouse.btn-arrow 
+					span Запросить консультацию
+					.btn-arrow__circle
+						<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
+						</svg>
 		.observer#solutions(data-step="3").solutions.inner
 			.inner
 				.small-title Решения

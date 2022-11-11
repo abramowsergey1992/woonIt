@@ -56,6 +56,7 @@
 
 	.btn-arrow {
 		margin-top: 20px;
+		justify-content: center;
 	}
 
 	&[data-position="center"] {
@@ -444,6 +445,7 @@ color {
 	border-radius: 50px;
 	padding: 150px 50px;
 	margin-bottom: 100px;
+	position: relative;
 
 	@media(max-width:992px) {
 		padding: 70px 30px;
@@ -455,9 +457,35 @@ color {
 		max-width: 811px;
 	}
 
+	&__mouse {
+		text-decoration: none;
+		color: #070B13;
+		border: 1px solid #070B13;
+		padding: 5px 10px;
+		border-radius: 20px;
+		background: #fff;
+		position: absolute;
+		opacity: 0;
+
+		.about-wh:hover & {
+			opacity: 1;
+		}
+	}
+
 	&__link {
 		text-decoration: none;
 		color: #070B13;
+
+		&::after {
+			display: block;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+
+		}
 	}
 
 	&__text {
