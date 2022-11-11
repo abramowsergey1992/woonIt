@@ -26,9 +26,10 @@ $(function () {
 	var $cursorWh = $(".about-wh__mouse");
 	var $wh = $(".about-wh__mouse");
 	var whTop = $("#about-wh").offset().top;
+	var whLeft = $("#about-wh").offset().left;
 	function moveCursorWh(e) {
 		$cursorWh.css({
-			left: e.pageX - +10,
+			left: e.pageX - whLeft + 10,
 			top: e.pageY - whTop - 20,
 		});
 		// gsap.to($cursor, 0.01, {
