@@ -855,7 +855,7 @@
                   <div class="feedbackb__anim"><img src="img/arrow.svg" alt=""><img src="img/arrow.svg" alt=""><img src="img/arrow.svg" alt=""></div>
                 </div>
                 <div class="feedbackb__right">
-                  <form class="feedbackb__form" action="/" method="POST">
+                  <form class="feedbackb__form" id="feedback-form" action="/" method="POST">
                     <h5>Форма обратной связи</h5>
                     <div class="form-item"> 
                       <input data-rule-required type="text" name="name" placeholder="Имя Фамилия">
@@ -873,10 +873,10 @@
                       <input data-rule-required type="text" name="positiobn" placeholder="Должность">
                     </div>
                     <div class="form-item"> 
-                      <input class="mask-int" data-rule-required type="text" name="peoples" placeholder="Кол-во сотрудников">
+                      <input class="_mask-int" data-rule-required type="text" name="peoples" placeholder="Кол-во сотрудников">
                     </div>
                     <div class="feedbackb__form__text">  Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных</div>
-                    <button class="btn-arrow" type="submit"> <span>Отправить заявку</span>
+                    <button class="feedbackb__form-btn btn-arrow" type="submit"> <span>Отправить заявку</span>
                       <div class="btn-arrow__circle"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M11.7854 1.40292H1.40372M11.7854 1.40292V11.7846M11.7854 1.40292L1.40372 11.7846" stroke="white" stroke-width="2"/>
 </svg>
@@ -1032,7 +1032,7 @@
                 <input data-rule-required type="text" name="positiobn" placeholder="Должность">
               </div>
               <div class="form-item"> 
-                <input class="mask-int" data-rule-required type="text" name="peoples" placeholder="Кол-во сотрудников">
+                <input class="_mask-int" data-rule-required type="text" name="peoples" placeholder="Кол-во сотрудников">
               </div>
             </div>
             <div class="feedback-popup__text">  Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных</div>

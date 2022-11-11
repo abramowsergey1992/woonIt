@@ -857,7 +857,7 @@ block content
 							img(src="img/arrow.svg", alt="")
 							img(src="img/arrow.svg", alt="")
 					.feedbackb__right
-						form.feedbackb__form(action="/",method="POST")
+						form#feedback-form.feedbackb__form(action="/",method="POST")
 							h5 Форма обратной связи
 							.form-item 
 								input(data-rule-required, type="text",name="name",placeholder="Имя Фамилия")
@@ -870,9 +870,9 @@ block content
 							.form-item 
 								input(data-rule-required, type="text",name="positiobn",placeholder="Должность")
 							.form-item 
-								input.mask-int(data-rule-required, type="text",name="peoples",placeholder="Кол-во сотрудников")
+								input._mask-int(data-rule-required, type="text",name="peoples",placeholder="Кол-во сотрудников")
 							.feedbackb__form__text   Нажимая на кнопку «отправить заявку» я соглашаюсь с Политикой конфиденциальности и даю согласие на обработку персональных данных
-							button.btn-arrow(type="submit") 
+							button.feedbackb__form-btn.btn-arrow(type="submit") 
 								span Отправить заявку
 								.btn-arrow__circle
 									<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">

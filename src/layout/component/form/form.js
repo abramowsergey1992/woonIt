@@ -40,4 +40,43 @@ $(function () {
 			},
 		});
 	}
+	if ($("#feedback-form").length) {
+		let validFeedback = $("#feedback-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(".feedbackb__form-btn").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "success");
+						$(".feedbackb__form-btn").removeAttr("disabled");
+					},
+					error: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "error");
+						$("feedbackb__form-btn").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
 });
