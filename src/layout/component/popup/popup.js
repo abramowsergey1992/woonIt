@@ -6,7 +6,9 @@ $(function () {
 			popup.removeClass("_display");
 		}, 500);
 	});
-	$("[data-popup]").click(function () {
+	$("[data-popup]").click(function (e) {
+		e.preventDefault();
+		$(".popup").removeClass("_display", "_animate");
 		let popup = $($(this).data("popup"));
 		popup.attr("data-state", "");
 		popup.find("input").val("");
