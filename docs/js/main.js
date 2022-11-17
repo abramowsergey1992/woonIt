@@ -1,4 +1,3 @@
-$(function(){})
 $(function () {
 	let once = true;
 	let solution = [
@@ -241,6 +240,7 @@ $(function () {
 		});
 		render.canvas.width = window.innerWidth;
 		render.canvas.height = window.innerHeight;
+
 		let delta = 1;
 		const mediaQuery = window.matchMedia("(max-width: 768px)");
 		if (mediaQuery.matches) {
@@ -297,6 +297,7 @@ $(function () {
 				render: { visible: false },
 			}
 		);
+
 		var groundLeft = Bodies.rectangle(
 			-5,
 			window.innerHeight / 2,
@@ -318,6 +319,97 @@ $(function () {
 			}
 		);
 
+		$(window).on("resize", function () {
+			once = true;
+			boxs.forEach(function (element, key) {
+				Composite.remove(engine.world, element);
+			});
+			let delta = 1;
+			const mediaQuery = window.matchMedia("(max-width: 768px)");
+			if (mediaQuery.matches) {
+				delta = 0.5;
+			}
+			var length = microsoft.length,
+				element = null;
+			let h = 0;
+
+			boxs = [];
+			for (var i = 0; i < length; i++) {
+				h -= 300;
+				element = microsoft[i];
+				var box = Bodies.rectangle(
+					Math.round(
+						Math.floor(
+							Math.random() *
+								(window.innerWidth / 1.5 - 100 + 1) +
+								100
+						)
+					),
+					h,
+					microsoft[i]["w"] * delta,
+					microsoft[i]["h"] * delta,
+					{
+						// isStatic: true,
+
+						render: {
+							sprite: {
+								texture: microsoft[i]["img"],
+								// texture: "/img/freeconsultation.png",
+								xScale: 0.5 * delta,
+								yScale: 0.5 * delta,
+							},
+						},
+					}
+				);
+
+				boxs.push(box);
+				Composite.add(engine.world, [box]);
+			}
+			render.canvas.width = window.innerWidth;
+			render.canvas.height = window.innerHeight;
+			Composite.remove(engine.world, groundBottom);
+			Composite.remove(engine.world, groundLeft);
+			Composite.remove(engine.world, groundRight);
+			groundBottomp = window.innerHeight + 10;
+			if (window.innerWidth <= 992) {
+				groundBottomp = window.innerHeight + 0;
+			}
+			groundBottom = Bodies.rectangle(
+				window.innerWidth / 2,
+				groundBottomp,
+				window.innerWidth,
+				10,
+				{
+					isStatic: true,
+					render: { visible: false },
+				}
+			);
+			groundLeft = Bodies.rectangle(
+				-5,
+				window.innerHeight / 2,
+				5,
+				window.innerHeight,
+				{
+					isStatic: true,
+					render: { visible: false },
+				}
+			);
+			groundRight = Bodies.rectangle(
+				window.innerWidth,
+				window.innerHeight / 2,
+				1,
+				window.innerHeight,
+				{
+					isStatic: true,
+					render: { visible: false },
+				}
+			);
+			Composite.add(engine.world, [
+				groundBottom,
+				groundLeft,
+				groundRight,
+			]);
+		});
 		// add all of the bodies to the world
 		Composite.add(engine.world, [groundBottom, groundLeft, groundRight]);
 
@@ -483,6 +575,7 @@ $(function () {
 	}
 });
 
+$(function(){})
 $(function () {
 	var $cursor = $(".top__mouse");
 
@@ -690,7 +783,7 @@ $(function () {
 						slidesPerView: 2,
 						spaceBetween: 23,
 					},
-					992: {
+					1030: {
 						slidesPerView: 3,
 						spaceBetween: 23,
 					},
@@ -988,6 +1081,7 @@ $(function () {
 	});
 });
 
+$(function(){})
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
 		let popup = $(this).closest(".popup");
@@ -1009,7 +1103,6 @@ $(function () {
 	});
 });
 
-$(function(){})
 $(function () {
 	// let $menuLinks = $(".header__menu a");
 	// function changeScroll(step = 0, href = 0) {

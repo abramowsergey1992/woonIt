@@ -205,7 +205,7 @@ $(function () {
 						slidesPerView: 2,
 						spaceBetween: 23,
 					},
-					992: {
+					1030: {
 						slidesPerView: 3,
 						spaceBetween: 23,
 					},

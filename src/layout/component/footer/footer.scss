@@ -42,6 +42,10 @@
 		@include lh(32, 32);
 		letter-spacing: -0.03em;
 
+		@media(max-width:1024px) {
+			font-size: 26px;
+		}
+
 		@media(max-width:992px) {
 			font-weight: 600;
 			font-size: 18px;
