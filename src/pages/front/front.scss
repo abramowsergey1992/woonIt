@@ -1217,6 +1217,41 @@ color {
 }
 
 .why-slider {
+	position: relative;
+
+	&__circle {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: calc(33.3333% - 16px);
+		background: $grandient;
+		border-radius: 50%;
+		mix-blend-mode: lighten;
+		z-index: 10;
+		pointer-events: none;
+
+		@media(max-width:480px) {
+			width: calc(85.3% - 10px);
+		}
+
+		@media(max-width:640px) {
+			right: inherit;
+			width: calc(67.6% - 10px);
+			left: 0;
+		}
+
+		@media(max-width:1030px) {
+			width: calc(50% - 10px);
+		}
+
+		&::after {
+			padding-bottom: 100%;
+			display: block;
+			content: '';
+
+		}
+	}
+
 	@media(max-width:992px) {
 		margin-left: -10px;
 		margin-right: -10px;
@@ -1226,14 +1261,17 @@ color {
 .why-it {
 	border-radius: 50%;
 	overflow: hidden;
-	background: $grandient;
+	// background: $grandient;
 	position: relative;
+	background-image: url("data:image/svg+xml,%3Csvg width='435' height='435' viewBox='0 0 435 435' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='217.5' cy='217.5' r='216.5' stroke='url(%23paint0_linear_146_2058)' stroke-width='2'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_146_2058' x1='1' y1='217.451' x2='434' y2='217.451' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23653290'/%3E%3Cstop offset='1' stop-color='%23ED2239'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E%0A");
+	background-position: center;
+	background-size: contain;
 
 	&__wrap {
 		position: absolute;
 		left: 2px;
 		top: 2px;
-		background-color: #070B13;
+		// background-color: #070B13;
 		width: 100%;
 		height: 100%;
 		border-radius: 50%;
