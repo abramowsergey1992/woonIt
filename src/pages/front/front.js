@@ -98,8 +98,11 @@ $(function () {
 				solutions = $("#solutions").innerHeight();
 				complex = $("#complex").innerHeight();
 				freeConsultationOffset =
-					$("#free-consultation").innerHeight() -
-					$("#fix-cicrle").height();
+					($("#free-consultation").innerHeight() -
+						$("#fix-cicrle").height()) /
+						2 +
+					$("#fix-cicrle").height() / 2;
+				console.log(freeConsultationOffset);
 				freeConsultation = $("#free-consultation").innerHeight() + 350;
 				if (solutionss) solutionss.refresh();
 				// console.log(solutions, solutionss);
@@ -145,6 +148,15 @@ $(function () {
 				// .addIndicators({ name: "why" })
 				.on("enter ", function () {
 					$(".fix-cicrle").attr("data-step", 10);
+				})
+				.addTo(controller);
+			new ScrollMagic.Scene({
+				triggerElement: "#free-consultation",
+				duration: freeConsultationOffset,
+			})
+				// .addIndicators({ name: "why 2" })
+				.on("enter ", function () {
+					$(".fix-cicrle").attr("data-step", 4);
 				})
 				.addTo(controller);
 
