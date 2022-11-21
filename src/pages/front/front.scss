@@ -522,13 +522,17 @@ color {
 			height: 4px;
 			left: 0;
 			top: 50%;
-			margin-top: 4px;
+
 			width: 0%;
 			position: absolute;
 			transform: translateY(-50%);
 			background-image: $grandient;
 			transition: width 1s linear;
 			will-change: width;
+
+			@media(min-width:992px) {
+				margin-top: 4px;
+			}
 		}
 	}
 
