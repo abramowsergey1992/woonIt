@@ -96,20 +96,30 @@ $(function () {
 			let about;
 			let solutions;
 			let freeConsultation;
+			let circleWrapHeight;
 			function resize(solutionss = 0) {
+				console.log("");
+				let fch = $("#free-consultation").innerHeight();
 				top = $("#top").innerHeight();
 				about = $("#about").innerHeight();
 				wh = $("#about-wh").innerHeight();
 				solutions = $("#solutions").innerHeight();
 				complex = $("#complex").innerHeight();
+				complex = $("#complex").innerHeight();
 				freeConsultationOffset =
-					($("#free-consultation").innerHeight() -
-						$("#fix-cicrle").height()) /
-						2 +
-					$("#fix-cicrle").height() / 2;
+					(fch - $("#fix-cicrle").width()) / 2 +
+					$("#fix-cicrle").width() / 2;
 				console.log(freeConsultationOffset);
-				freeConsultation = $("#free-consultation").innerHeight() + 350;
+				freeConsultation = fch + 350;
 				if (solutionss) solutionss.refresh();
+				circleWrapHeight =
+					$("#free-consultation").offset().top +
+					fch -
+					(fch / 2 - $("#fix-cicrle").width() / 2);
+				$("#fix-cicrle").css({
+					height: circleWrapHeight,
+					right: $("h1").offset().left,
+				});
 				// console.log(solutions, solutionss);
 			}
 			resize();
@@ -155,16 +165,16 @@ $(function () {
 					$(".complex").addClass("_visible");
 				})
 				.addTo(controller);
-			new ScrollMagic.Scene({
-				triggerElement: "#free-consultation",
-				duration: 3000,
-				offset: freeConsultationOffset,
-			})
-				// .addIndicators({ name: "why" })
-				.on("enter ", function () {
-					$(".fix-cicrle").attr("data-step", 10);
-				})
-				.addTo(controller);
+			// new ScrollMagic.Scene({
+			// 	triggerElement: "#free-consultation",
+			// 	duration: 3000,
+			// 	offset: freeConsultationOffset,
+			// })
+			// 	// .addIndicators({ name: "why" })
+			// 	.on("enter ", function () {
+			// 		$(".fix-cicrle").attr("data-step", 10);
+			// 	})
+			// 	.addTo(controller);
 			new ScrollMagic.Scene({
 				triggerElement: "#free-consultation",
 				duration: freeConsultationOffset,
