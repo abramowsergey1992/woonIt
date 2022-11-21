@@ -1,4 +1,9 @@
 $(function () {
+	$(window).scrollTop(0);
+	setTimeout(function () {
+		$(window).scrollTop(0);
+		$("h1").addClass("_animate");
+	}, 300);
 	var $cursor = $(".top__mouse");
 
 	function limitNumberWithinRange(num, min, max) {
@@ -116,6 +121,16 @@ $(function () {
 				.on("enter ", function () {
 					resize();
 					$(".fix-cicrle").attr("data-step", 1);
+				})
+				.addTo(controller);
+			new ScrollMagic.Scene({
+				triggerElement: "#about-wh",
+				duration: $("#about-wh").height(),
+			})
+				.addIndicators({ name: "#about-wh" })
+				.on("enter ", function () {
+					resize();
+					$("#about-wh").addClass("_anim");
 				})
 				.addTo(controller);
 

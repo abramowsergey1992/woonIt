@@ -577,6 +577,11 @@ $(function () {
 
 $(function(){})
 $(function () {
+	$(window).scrollTop(0);
+	setTimeout(function () {
+		$(window).scrollTop(0);
+		$("h1").addClass("_animate");
+	}, 300);
 	var $cursor = $(".top__mouse");
 
 	function limitNumberWithinRange(num, min, max) {
@@ -694,6 +699,16 @@ $(function () {
 				.on("enter ", function () {
 					resize();
 					$(".fix-cicrle").attr("data-step", 1);
+				})
+				.addTo(controller);
+			new ScrollMagic.Scene({
+				triggerElement: "#about-wh",
+				duration: $("#about-wh").height(),
+			})
+				.addIndicators({ name: "#about-wh" })
+				.on("enter ", function () {
+					resize();
+					$("#about-wh").addClass("_anim");
 				})
 				.addTo(controller);
 
@@ -907,7 +922,6 @@ $(function () {
 	}
 });
 
-$(function(){})
 $(function () {
 	AOS.init();
 
@@ -1093,7 +1107,6 @@ $(function () {
 	});
 });
 
-$(function(){})
 $(function () {
 	$(".popup__close,.popup__overlay").click(function () {
 		let popup = $(this).closest(".popup");
@@ -1115,6 +1128,7 @@ $(function () {
 	});
 });
 
+$(function(){})
 $(function () {
 	// let $menuLinks = $(".header__menu a");
 	// function changeScroll(step = 0, href = 0) {
@@ -1340,3 +1354,5 @@ $(function () {
 	// 	});
 	// }, 300);
 });
+
+$(function(){})

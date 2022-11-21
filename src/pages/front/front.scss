@@ -368,6 +368,14 @@ color {
 	margin-bottom: 157px;
 
 	h1 {
+		&._animate {
+			._underline {
+				&::after {
+					width: 100%;
+				}
+			}
+		}
+
 		._underline {
 			display: inline-block;
 			position: relative;
@@ -378,10 +386,12 @@ color {
 				height: 6px;
 				left: 0;
 				top: 50%;
-				width: 100%;
+				width: 0%;
 				position: absolute;
 				transform: translateY(-50%);
 				background-image: $grandient;
+				transition: width 1s linear;
+				will-change: width;
 			}
 		}
 	}
@@ -496,6 +506,29 @@ color {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 811px;
+	}
+
+	&._anim ._underline::after {
+		width: 100%;
+	}
+
+	._underline {
+		display: inline-block;
+		position: relative;
+
+		&::after {
+			display: block;
+			content: '';
+			height: 4px;
+			left: 0;
+			top: 50%;
+			width: 0%;
+			position: absolute;
+			transform: translateY(-50%);
+			background-image: $grandient;
+			transition: width 1s linear;
+			will-change: width;
+		}
 	}
 
 	&__mouse {
