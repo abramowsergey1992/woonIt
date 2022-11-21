@@ -575,7 +575,6 @@ $(function () {
 	}
 });
 
-$(function(){})
 $(function () {
 	$(window).scrollTop(0);
 	setTimeout(function () {
@@ -665,7 +664,7 @@ $(function () {
 				duration: window.innerHeight,
 			})
 				// animate color and top border in relation to scroll position
-				.setTween("#fix-cicrle-wrap", {
+				.setTween(".fix-cicrle-wrap", {
 					top: 0,
 				}) // the tween durtion can be omitted and defaults to 1
 				.addTo(controller);
@@ -932,6 +931,7 @@ $(function () {
 	}
 });
 
+$(function(){})
 $(function(){})
 $(function () {
 	AOS.init();
