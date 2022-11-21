@@ -118,7 +118,7 @@ $(function () {
 					(fch / 2 - $("#fix-cicrle").width() / 2);
 				$("#fix-cicrle").css({
 					height: circleWrapHeight,
-					right: $("h1").offset().left,
+					// right: $("h1").offset().left,
 				});
 				// console.log(solutions, solutionss);
 			}
