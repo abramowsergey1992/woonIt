@@ -127,7 +127,7 @@ $(function () {
 				triggerElement: "#about-wh",
 				duration: $("#about-wh").height(),
 			})
-				.addIndicators({ name: "#about-wh" })
+				// .addIndicators({ name: "#about-wh" })
 				.on("enter ", function () {
 					resize();
 					$("#about-wh").addClass("_anim");
@@ -157,7 +157,7 @@ $(function () {
 				.addTo(controller);
 			new ScrollMagic.Scene({
 				triggerElement: "#free-consultation",
-				duration: 300,
+				duration: 3000,
 				offset: freeConsultationOffset,
 			})
 				// .addIndicators({ name: "why" })

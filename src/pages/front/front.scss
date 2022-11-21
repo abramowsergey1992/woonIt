@@ -1208,6 +1208,18 @@ color {
 		display: flex;
 		flex-direction: row;
 
+		@keyframes navAnim {
+			from {
+				opacity: 0;
+			}
+
+
+
+			to {
+				opacity: 1;
+			}
+		}
+
 		&-prev,
 		&-next {
 			width: 43px;
@@ -1222,6 +1234,14 @@ color {
 			justify-content: center;
 			overflow: hidden;
 
+			&.swiper-button-disabled {
+
+				&::before {
+					opacity: 0 !important;
+					animation: none;
+				}
+			}
+
 			&::before {
 				position: absolute;
 				left: 0;
@@ -1233,11 +1253,16 @@ color {
 				opacity: 0;
 				will-change: opacity;
 				transition: opacity 0.3s;
+				animation: navAnim 1s infinite linear;
+				animation-direction: reverse;
 			}
+
+
 
 			&:hover {
 				&::before {
-					opacity: 1;
+					opacity: 1 !important;
+					animation: none;
 				}
 			}
 
