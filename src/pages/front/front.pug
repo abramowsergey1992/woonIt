@@ -2,7 +2,58 @@ extends ../../layout/layout
 block title
 	title W-ONE IT 
 block content
+		.fix-cicrle-wrap
+			#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
+				#fix-cicrle-wrap.fix-cicrle__wrap
+					.fix-circle-1.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Полный цикл проекта 
+								br
+								| по замене: от консультации до внедрения и поддержки
+					.fix-circle-2.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
+									br
+									| еще нужно «подружить» новое решение с остальными
+				
+					.fix-circle-3.fix-circle-step
+						.fix-circle-step__wrap
+							.fix-circle-3__bg
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+								img(src="img/circle-bg.svg", alt="")
+							p
+								color Выберите категорию 
+								| - 
+								br
+								| мы подберем необходимое решение...
+							a.btn-arrow(href="#",data-popup="#feedback")
+								span Запросить консультацию
+								.btn-arrow__circle
+									<svg 2width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
+									</svg>
 
+
+					.fix-circle-4.fix-circle-step
+						.fix-circle-step__wrap
+							p
+								color Акция действует
+									br
+									| до 30 ноября 2022!
+							a.btn-arrow(href="#",data-popup="#feedback")
+								span Запросить консультацию
+								.btn-arrow__circle
+									<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
+									</svg>
 
 		.observer#top.inner.top
 			h1 Замена решений
@@ -604,57 +655,6 @@ block content
 		
 		
 		.observer#free-consultation(data-step="4").free-consultation
-			#fix-cicrle.fix-cicrle(data-position="bottom",data-step="1") 
-				#fix-cicrle-wrap.fix-cicrle__wrap
-					.fix-circle-1.fix-circle-step
-						.fix-circle-step__wrap
-							p
-								color Полный цикл проекта 
-								br
-								| по замене: от консультации до внедрения и поддержки
-					.fix-circle-2.fix-circle-step
-						.fix-circle-step__wrap
-							p
-								color Многие теряются в подборе российских решений, ведь мало того, что нужно найти похожий функционал, помимо этого 
-									br
-									| еще нужно «подружить» новое решение с остальными
-				
-					.fix-circle-3.fix-circle-step
-						.fix-circle-step__wrap
-							.fix-circle-3__bg
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-								img(src="img/circle-bg.svg", alt="")
-							p
-								color Выберите категорию 
-								| - 
-								br
-								| мы подберем необходимое решение...
-							a.btn-arrow(href="#",data-popup="#feedback")
-								span Запросить консультацию
-								.btn-arrow__circle
-									<svg 2width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
-									</svg>
-
-
-					.fix-circle-4.fix-circle-step
-						.fix-circle-step__wrap
-							p
-								color Акция действует
-									br
-									| до 30 ноября 2022!
-							a.btn-arrow(href="#",data-popup="#feedback")
-								span Запросить консультацию
-								.btn-arrow__circle
-									<svg 2 width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M11.785 1.36087L1.40332 11.7846M11.785 1.36087V11.7846M11.785 1.36087H12.7826L1.40332 1.40292" stroke="white" stroke-width="2"/>
-									</svg>
 
 			.free-consultation__bg-wrap 
 				.free-consultation__bg

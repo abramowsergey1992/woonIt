@@ -12,28 +12,57 @@
 	}
 }
 
+#complex,
+#awards,
+#about,
+#top,
+#about-wh,
+#solutions,
+#free-consultation,
+#why {
+	overflow: hidden;
+}
+
+.fix-cicrle-wrap {
+	position: relative;
+	z-index: 100;
+	top: calc(50vh - 100px);
+}
+
 .fix-cicrle {
+
+	// border: 1px solid red;
+
 	@media(max-width:$NotCircle) {
 		display: none;
 	}
 
 	&__wrap {
-		position: absolute;
-		top: calc(50vh - 250px);
+		position: sticky;
+		top: calc(50vh - 250px) !important;
 		width: 100%;
-		height: 100%;
-		left: 0;
+
+		right: 0;
+
+		&::after {
+			display: block;
+			content: '';
+			padding-bottom: 100%;
+		}
+
 		will-change: top;
 	}
 
 	max-width: 433px;
 	width: 33.33%;
-	border-radius: 50%;
 	right: calc(((100vw - 1440px)/2) + 45px);
 	z-index: 100;
 	position: fixed;
-	top: 50%;
-	transform: translateY(-50%);
+	top: 0%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 4000px;
 
 
 	@media(max-width:1440px) {
@@ -64,9 +93,9 @@
 	}
 
 	&[data-step="10"] {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
+		// position: absolute;
+		// top: 50%;
+		// transform: translateY(-50%);
 	}
 
 	&[data-step="1"] {
@@ -144,6 +173,8 @@
 .fix-circle-step {
 	will-change: transform;
 	transition: transform 0.5s;
+
+
 }
 
 #about-wh {

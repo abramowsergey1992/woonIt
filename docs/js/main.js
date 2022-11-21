@@ -575,6 +575,7 @@ $(function () {
 	}
 });
 
+$(function(){})
 $(function () {
 	$(window).scrollTop(0);
 	setTimeout(function () {
@@ -673,20 +674,30 @@ $(function () {
 			let about;
 			let solutions;
 			let freeConsultation;
+			let circleWrapHeight;
 			function resize(solutionss = 0) {
+				console.log("");
+				let fch = $("#free-consultation").innerHeight();
 				top = $("#top").innerHeight();
 				about = $("#about").innerHeight();
 				wh = $("#about-wh").innerHeight();
 				solutions = $("#solutions").innerHeight();
 				complex = $("#complex").innerHeight();
+				complex = $("#complex").innerHeight();
 				freeConsultationOffset =
-					($("#free-consultation").innerHeight() -
-						$("#fix-cicrle").height()) /
-						2 +
-					$("#fix-cicrle").height() / 2;
+					(fch - $("#fix-cicrle").width()) / 2 +
+					$("#fix-cicrle").width() / 2;
 				console.log(freeConsultationOffset);
-				freeConsultation = $("#free-consultation").innerHeight() + 350;
+				freeConsultation = fch + 350;
 				if (solutionss) solutionss.refresh();
+				circleWrapHeight =
+					$("#free-consultation").offset().top +
+					fch -
+					(fch / 2 - $("#fix-cicrle").width() / 2);
+				$("#fix-cicrle").css({
+					height: circleWrapHeight,
+					right: $("h1").offset().left,
+				});
 				// console.log(solutions, solutionss);
 			}
 			resize();
@@ -732,16 +743,16 @@ $(function () {
 					$(".complex").addClass("_visible");
 				})
 				.addTo(controller);
-			new ScrollMagic.Scene({
-				triggerElement: "#free-consultation",
-				duration: 3000,
-				offset: freeConsultationOffset,
-			})
-				// .addIndicators({ name: "why" })
-				.on("enter ", function () {
-					$(".fix-cicrle").attr("data-step", 10);
-				})
-				.addTo(controller);
+			// new ScrollMagic.Scene({
+			// 	triggerElement: "#free-consultation",
+			// 	duration: 3000,
+			// 	offset: freeConsultationOffset,
+			// })
+			// 	// .addIndicators({ name: "why" })
+			// 	.on("enter ", function () {
+			// 		$(".fix-cicrle").attr("data-step", 10);
+			// 	})
+			// 	.addTo(controller);
 			new ScrollMagic.Scene({
 				triggerElement: "#free-consultation",
 				duration: freeConsultationOffset,
@@ -922,7 +933,89 @@ $(function () {
 });
 
 $(function(){})
-$(function(){})
+$(function () {
+	AOS.init();
+
+	document.addEventListener("aos:in", ({ detail }) => {
+		console.log("animated in", detail);
+	});
+	$("._mask-phone").each(function () {
+		Inputmask("+7 (999) 999-99-99").mask(this);
+	});
+	$("._mask-date").each(function () {
+		Inputmask("99.99.9999").mask(this);
+	});
+	$("._mask-int").each(function () {
+		Inputmask("9{1,10}").mask(this);
+	});
+	if ($("#popup-feedback-form").length) {
+		let validContacnt = $("#popup-feedback-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(".feedback-popup__sbmt").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						$(".feedback-popup").attr("data-state", "success");
+						$(".feedback-popup__sbmt").removeAttr("disabled");
+					},
+					error: function () {
+						$(".feedback-popup").attr("data-state", "error");
+						$(".feedback-popup__sbmt").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+	if ($("#feedback-form").length) {
+		let validFeedback = $("#feedback-form").validate({
+			errorPlacement: function (error, element) {},
+			submitHandler: function (form) {
+				$(".feedbackb__form-btn").attr("disabled", "disabled");
+				$.ajax({
+					url: $(form).attr("action"),
+					data: $(form).serialize(),
+					method: "POST",
+					headers: {
+						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
+							"content"
+						),
+					},
+					context: document.body,
+					success: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "success");
+						$(".feedbackb__form-btn").removeAttr("disabled");
+					},
+					error: function () {
+						let popup = $("#feedback");
+						popup.find("input").val("");
+						popup.addClass("_display");
+						setTimeout(function () {
+							popup.addClass("_animate");
+						}, 500);
+						$(".feedback-popup").attr("data-state", "error");
+						$("feedbackb__form-btn").removeAttr("disabled");
+					},
+				});
+			},
+		});
+	}
+});
+
 $(function () {
 	$(".header__mob-menu").click(function () {
 		$(".header-mob").fadeIn();
@@ -1023,89 +1116,6 @@ $(function () {
 		// console.log(link);
 		// $("[href='#" + link + "']").addClass("_active");
 	});
-});
-
-$(function () {
-	AOS.init();
-
-	document.addEventListener("aos:in", ({ detail }) => {
-		console.log("animated in", detail);
-	});
-	$("._mask-phone").each(function () {
-		Inputmask("+7 (999) 999-99-99").mask(this);
-	});
-	$("._mask-date").each(function () {
-		Inputmask("99.99.9999").mask(this);
-	});
-	$("._mask-int").each(function () {
-		Inputmask("9{1,10}").mask(this);
-	});
-	if ($("#popup-feedback-form").length) {
-		let validContacnt = $("#popup-feedback-form").validate({
-			errorPlacement: function (error, element) {},
-			submitHandler: function (form) {
-				$(".feedback-popup__sbmt").attr("disabled", "disabled");
-				$.ajax({
-					url: $(form).attr("action"),
-					data: $(form).serialize(),
-					method: "POST",
-					headers: {
-						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-							"content"
-						),
-					},
-					context: document.body,
-					success: function () {
-						$(".feedback-popup").attr("data-state", "success");
-						$(".feedback-popup__sbmt").removeAttr("disabled");
-					},
-					error: function () {
-						$(".feedback-popup").attr("data-state", "error");
-						$(".feedback-popup__sbmt").removeAttr("disabled");
-					},
-				});
-			},
-		});
-	}
-	if ($("#feedback-form").length) {
-		let validFeedback = $("#feedback-form").validate({
-			errorPlacement: function (error, element) {},
-			submitHandler: function (form) {
-				$(".feedbackb__form-btn").attr("disabled", "disabled");
-				$.ajax({
-					url: $(form).attr("action"),
-					data: $(form).serialize(),
-					method: "POST",
-					headers: {
-						"X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr(
-							"content"
-						),
-					},
-					context: document.body,
-					success: function () {
-						let popup = $("#feedback");
-						popup.find("input").val("");
-						popup.addClass("_display");
-						setTimeout(function () {
-							popup.addClass("_animate");
-						}, 500);
-						$(".feedback-popup").attr("data-state", "success");
-						$(".feedbackb__form-btn").removeAttr("disabled");
-					},
-					error: function () {
-						let popup = $("#feedback");
-						popup.find("input").val("");
-						popup.addClass("_display");
-						setTimeout(function () {
-							popup.addClass("_animate");
-						}, 500);
-						$(".feedback-popup").attr("data-state", "error");
-						$("feedbackb__form-btn").removeAttr("disabled");
-					},
-				});
-			},
-		});
-	}
 });
 
 $(function(){})
