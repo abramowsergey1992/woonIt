@@ -484,8 +484,14 @@ $(function () {
 				boxs.push(box);
 				Composite.add(engine.world, [box]);
 			}
-			render.canvas.width = canvas.getBoundingClientRect().width;
-			render.canvas.height = window.innerHeight;
+
+			ratio = window.devicePixelRatio;
+			render.canvas.width = window.innerWidth * ratio;
+			render.canvas.height = window.innerHeight * ratio;
+			document
+				.querySelector(".phisicbox canvas")
+				.getContext("2d")
+				.scale(ratio, ratio);
 			Composite.remove(engine.world, groundBottom);
 			Composite.remove(engine.world, groundLeft);
 			Composite.remove(engine.world, groundRight);
@@ -603,9 +609,13 @@ $(function () {
 				background: "transparent",
 			},
 		});
-
-		render.canvas.width = window.innerWidth;
-		render.canvas.height = window.innerHeight;
+		ratio = window.devicePixelRatio;
+		render.canvas.width = window.innerWidth * ratio;
+		render.canvas.height = window.innerHeight * ratio;
+		document
+			.querySelector(".phisicbox canvas")
+			.getContext("2d")
+			.scale(ratio, ratio);
 		let delta = 1;
 		const mediaQuery = window.matchMedia("(max-width: 768px)");
 		if (mediaQuery.matches) {
