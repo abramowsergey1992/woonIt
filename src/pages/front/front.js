@@ -232,17 +232,19 @@ $(function () {
 			const why = new Swiper(".why-slider", {
 				slidesPerView: 1.2,
 				spaceBetween: 10,
-
+				centeredSlides: true,
 				breakpoints: {
 					480: {
 						slidesPerView: 1.5,
 						spaceBetween: 10,
 					},
 					640: {
+						centeredSlides: false,
 						slidesPerView: 2,
 						spaceBetween: 23,
 					},
 					1030: {
+						centeredSlides: false,
 						slidesPerView: 3,
 						spaceBetween: 23,
 					},
