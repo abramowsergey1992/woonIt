@@ -320,10 +320,10 @@ $(function () {
 	var engine = Engine.create({
 		options: {
 			showBounds: true,
-			constraintIterations: 1,
-			velocityIterations: 2,
-			positionIterations: 2,
-			enableSleeping: true,
+			// constraintIterations: 1,
+			// velocityIterations: 2,
+			// positionIterations: 2,
+			// enableSleeping: true,
 			gravity: {
 				scale: 22,
 				y: 2,
@@ -341,8 +341,11 @@ $(function () {
 				background: "transparent",
 			},
 		});
+		const ratio = window.devicePixelRatio;
 		render.canvas.width = window.innerWidth;
 		render.canvas.height = window.innerHeight;
+		render.canvas.getContext("2d").scale(ratio, ratio);
+
 		let m = microsoft;
 		let delta = 1;
 		let delta2 = 1;
