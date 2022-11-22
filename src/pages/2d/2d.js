@@ -341,10 +341,11 @@ $(function () {
 				background: "transparent",
 			},
 		});
-		const ratio = window.devicePixelRatio;
-		render.canvas.width = window.innerWidth;
-		render.canvas.height = window.innerHeight;
-		render.canvas.getContext("2d").scale(ratio, ratio);
+		const ratio = 1;
+		// const ratio = window.devicePixelRatio;
+		render.canvas.width = window.innerWidth * ratio;
+		render.canvas.height = window.innerHeight * ratio;
+		// render.canvas.getContext("2d").scale(ratio, ratio);
 
 		let m = microsoft;
 		let delta = 1;
