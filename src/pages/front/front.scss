@@ -23,6 +23,10 @@
 	overflow: hidden;
 }
 
+canvas {
+	image-rendering: pixelated
+}
+
 .fix-cicrle-wrap {
 	position: relative;
 	z-index: 100;
