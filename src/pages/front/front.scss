@@ -15,7 +15,7 @@
 #complex,
 #awards,
 #about,
-#top,
+
 #about-wh,
 #solutions,
 #free-consultation,
@@ -383,8 +383,9 @@ color {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	transform: translateX(-50%);
+	height: calc(var(--vh, 1vh)*100);
 }
 
 .box {

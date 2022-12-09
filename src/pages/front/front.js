@@ -18,7 +18,7 @@ $(function () {
 		$cursor.addClass("is-moving");
 
 		$cursor.css({
-			left: e.pageX + 10,
+			left: e.pageX + 10 - $("#top").offset().left,
 			top: e.pageY + 10,
 		});
 		// gsap.to($cursor, 0.01, {
