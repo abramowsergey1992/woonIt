@@ -1,4 +1,35 @@
 $(function () {
+	const reviews = new Swiper(".reviews-slider", {
+		slidesPerView: "auto",
+		slidesPerGroup: 1,
+		spaceBetween: 22,
+		centeredSlides: false,
+		breakpoints: {
+			// 480: {
+			// 	slidesPerView: 1.2,
+			// 	spaceBetween: 10,
+			// },
+			// 640: {
+			// 	centeredSlides: false,
+			// 	slidesPerView: 1.5,
+			// 	spaceBetween: 23,
+			// },
+			// 1030: {
+			// 	centeredSlides: false,
+			// 	slidesPerView: 2,
+			// 	spaceBetween: 23,
+			// },
+			992: {
+				slidesPerGroup: 2,
+			},
+		},
+
+		navigation: {
+			nextEl: document.querySelector(".reviews__nav-next"),
+			prevEl: document.querySelector(".reviews__nav-prev"),
+		},
+	});
+
 	$(window).scrollTop(0);
 	setTimeout(function () {
 		$(window).scrollTop(0);
