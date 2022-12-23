@@ -1586,7 +1586,7 @@ color {
 	}
 
 	&:nth-child(even) {
-		width: 567px;
+		width: 576px;
 		max-width: calc((100vw - 98px) * 0.46 - 11px);
 
 		@media (max-width: 1200px) {
@@ -1642,7 +1642,7 @@ color {
 
 	&__body {
 		p {
-			font-weight: 800;
+			font-weight: 700;
 			font-size: 24px;
 			line-height: 32px;
 			letter-spacing: -0.03em;
